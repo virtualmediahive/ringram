@@ -116,12 +116,99 @@ footer .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(
 .concept{margin-top:18px;font-size:11px;letter-spacing:.06em;opacity:.8}
 .concept b{color:var(--gold);font-weight:400}
 
+/* ===== welcome intro ===== */
+#intro{position:fixed;inset:0;z-index:100;background:radial-gradient(120% 90% at 50% 40%,#1d1a15 0%,#0b0b0a 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;transition:opacity 1.2s ease,transform 1.4s cubic-bezier(.7,0,.2,1)}
+#intro.out{opacity:0;transform:scale(1.06);pointer-events:none}
+#intro svg.r{width:150px;height:150px}
+#intro .c1{stroke-dasharray:440;stroke-dashoffset:440;animation:draw 1.8s .2s cubic-bezier(.6,0,.2,1) forwards}
+#intro .c2{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.8s .5s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+#intro .spark{opacity:0;animation:spark 1.2s 1.7s ease forwards}
+@keyframes spark{40%{opacity:1;transform:scale(1.3)}100%{opacity:.9;transform:scale(1)}}
+#intro .word{font-size:30px;font-weight:300;letter-spacing:.5em;margin-top:22px;padding-left:.5em;opacity:0;animation:fadeup 1.2s 1.2s ease forwards}
+#intro .line{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--gold2);margin-top:10px;opacity:0;animation:fadeup 1.2s 1.8s ease forwards}
+#intro .skip{position:absolute;bottom:34px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8d857a;opacity:0;animation:fadeup 1s 2.2s ease forwards}
+#intro .shine{position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(227,200,138,.08) 50%,transparent 60%);background-size:250% 100%;animation:sweep 3s 1s ease-in-out}
+@keyframes sweep{from{background-position:120% 0}to{background-position:-20% 0}}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+body.intro-on .page{opacity:0;transform:translateY(24px)}
+.page{transition:opacity 1.3s ease .2s,transform 1.3s cubic-bezier(.2,.8,.2,1) .2s}
+
+/* ===== ring cursor ===== */
+@media (pointer:fine){body.rc,body.rc a,body.rc button,body.rc summary{cursor:none}}
+#rc{position:fixed;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;pointer-events:none;z-index:200;will-change:transform}
+#rc svg{position:absolute;inset:0;width:100%;height:100%;transition:opacity .6s ease,transform .35s cubic-bezier(.2,.8,.2,1)}
+#rc.hov svg{transform:scale(1.4) rotate(-15deg)}
+#rc .lbl{position:absolute;left:40px;top:34px;white-space:nowrap;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:var(--gold2);padding:3px 8px;border-radius:999px;opacity:0;transition:opacity .3s}
+#rc.hov .lbl{opacity:1}
+#rcdot{position:fixed;left:0;top:0;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;border-radius:50%;background:var(--gold);pointer-events:none;z-index:201}
+@media (pointer:coarse){#rc,#rcdot{display:none}}
+
+/* ===== quick actions + new here ===== */
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
+.quick a{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 6px;text-align:center;font-size:12.5px;line-height:1.25;transition:all .3s}
+.quick a b{display:block;font-size:20px;margin-bottom:4px;font-weight:400}
+.quick a:hover{border-color:var(--gold);transform:translateY(-2px)}
+.quick a.main{background:var(--ink);color:#fff;border-color:var(--ink)}
+.quick a.main b{color:var(--gold2)}
+.newhere{background:linear-gradient(160deg,#fffaf0,#fff);border:1.5px solid var(--gold2);border-radius:22px;padding:22px 20px}
+.newhere h2{font-weight:400;font-size:24px;line-height:1.15}
+.newhere h2 em{font-family:var(--serif);font-style:italic;color:var(--gold);font-weight:500}
+.newhere .sub{font-size:14px;color:var(--muted);margin:6px 0 16px}
+.steps3{counter-reset:s;display:flex;flex-direction:column;gap:10px}
+.st{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.st .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--ink);color:var(--gold2);display:grid;place-items:center;font-family:var(--serif);font-size:17px}
+.st b{font-weight:500;font-size:15px}
+.st p{font-size:13px;color:var(--muted);line-height:1.4;margin-top:2px}
+.ask{margin-top:16px}
+.ask .q{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:400}
+.ask .opts{display:flex;flex-wrap:wrap;gap:8px}
+.ask button{font:inherit;font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 14px;transition:all .25s}
+.ask button:hover,.ask button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pick{display:none;margin-top:14px;background:var(--ink);color:#fff;border-radius:16px;padding:16px;animation:fadeup .5s}
+.pick.on{display:block}
+.pick small{color:var(--gold2);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase}
+.pick h4{font-weight:400;font-size:18px;margin:4px 0}
+.pick p{font-size:13px;color:#cfc6b6}
+.pick .row{display:flex;gap:8px;margin-top:12px}
+.pick .row a{flex:1;text-align:center;border-radius:999px;padding:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.pick .row a.b1{background:var(--gold2);color:var(--ink)}
+.pick .row a.b2{border:1px solid rgba(255,255,255,.3)}
+.card.match{box-shadow:0 0 0 3px var(--gold2),0 18px 30px -18px rgba(0,0,0,.45);transform:translateY(-3px)}
+.prices{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;font-size:14px}
+.prices th,.prices td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);font-weight:300}
+.prices th{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);background:var(--sand)}
+.prices td:last-child{text-align:right;font-family:var(--serif);font-size:18px;font-weight:500}
+.prices tr:last-child td{border-bottom:0}
+.pnote{font-size:12px;color:var(--muted);margin-top:8px;text-align:center}
+.newbadge{display:inline-flex;align-items:center;gap:6px;background:var(--gold2);color:var(--ink);font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;border-radius:999px;font-weight:500;margin-bottom:10px}
+.newbadge i{width:6px;height:6px;border-radius:50%;background:#b3261e;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.stick{position:fixed;left:50%;bottom:14px;transform:translate(-50%,120%);z-index:60;width:min(500px,calc(100% - 24px));display:flex;gap:8px;background:rgba(14,14,14,.92);backdrop-filter:blur(12px);padding:8px;border-radius:999px;box-shadow:0 18px 40px -16px rgba(0,0,0,.6);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.stick.on{transform:translate(-50%,0)}
+.stick a{flex:1;text-align:center;border-radius:999px;padding:12px 8px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#fff}
+.stick a.b{background:var(--gold2);color:var(--ink);font-weight:500}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
 .rv.in{opacity:1;transform:none}
 @media (max-width:420px){h1{font-size:28px}.card .img{flex-basis:96px}.how span{font-size:11px}}
 </style>
 </head>
-<body>
+<body class="intro-on">
+<div id="intro" role="presentation">
+  <div class="shine"></div>
+  <svg class="r" viewBox="0 0 160 160">
+    <defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c4"/><stop offset=".45" stop-color="#d8b264"/><stop offset="1" stop-color="#8a6620"/></linearGradient></defs>
+    <circle class="c1" cx="80" cy="80" r="70" fill="none" stroke="url(#ig)" stroke-width="2.2" transform="rotate(-90 80 80)"/>
+    <circle class="c2" cx="80" cy="80" r="63" fill="none" stroke="#e3c88a" stroke-opacity=".45" stroke-width="1" transform="rotate(90 80 80)"/>
+    <g class="spark" style="transform-origin:80px 10px"><path d="M80 2 l3 6 6 2 -6 2 -3 6 -3-6 -6-2 6-2z" fill="#fff"/></g>
+    <text x="80" y="76" text-anchor="middle" fill="#fff" font-family="Jost, sans-serif" font-weight="300" font-size="21" letter-spacing="1" class="spark">ring</text>
+    <text x="80" y="100" text-anchor="middle" fill="#fff" font-family="Jost, sans-serif" font-weight="300" font-size="21" letter-spacing="1" class="spark">ram</text>
+  </svg>
+  <div class="word">NEW YORK</div>
+  <div class="line">Every ring tells a story</div>
+  <div class="skip">Tap to enter</div>
+</div>
+<div id="rc"><span class="lbl"></span></div><div id="rcdot"></div>
 <div class="page">
   <div class="pill">✦ ringram · ring-making studio · NYC</div>
 
@@ -143,11 +230,17 @@ footer .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(
       <a href="https://maps.google.com/?q=223+Mott+St+New+York+NY+10012" target="_blank" rel="noopener" aria-label="Directions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></a>
     </div>
     <div class="addr">223 Mott St, SoHo, New York · (646) 957-0489 · LA coming spring 2027</div>
+    <div class="quick">
+      <a class="main" href="#book"><b>💍</b>Book a session</a>
+      <a href="#prices"><b>$</b>See prices</a>
+      <a href="#newhere"><b>✦</b>New here? Start here</a>
+    </div>
   </div>
 
   <!-- offers -->
-  <div class="sec rv">
-    <div class="label">This month</div>
+  <div class="sec rv" id="offer">
+    <div class="label">This month's promotion</div>
+    <div style="text-align:center"><span class="newbadge"><i></i>New promotion</span></div>
     <a class="offer" href="https://www.instagram.com/p/DflQ4FyqXmL/" target="_blank" rel="noopener" style="display:block">
       <div class="k">One day only · Thursday, Nov 27</div>
       <h2>Our first <em>Black Friday</em></h2>
@@ -157,8 +250,46 @@ footer .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(
     <div class="mini-offer"><span class="gem"></span><div><b>November birthstone: citrine</b><small>Warm golden hues and 50% off citrine birthstones all month.</small></div></div>
   </div>
 
+  <!-- new here -->
+  <div class="sec rv" id="newhere">
+    <div class="label">Are you new here?</div>
+    <div class="newhere">
+      <h2>Welcome to ringram. <em>Here's how it works.</em></h2>
+      <p class="sub">You make your own ring by hand with our artisans in SoHo. No experience needed. Booking takes about 2 minutes.</p>
+      <div class="steps3">
+        <div class="st"><span class="n">1</span><div><b>Pick your experience</b><p>Choose gold &amp; platinum (2 hrs) or sterling silver (1 hr), for 1–2 people.</p></div></div>
+        <div class="st"><span class="n">2</span><div><b>Check the price</b><p>Silver is a flat price per ring. Gold depends on karat, width and size.</p></div></div>
+        <div class="st"><span class="n">3</span><div><b>Book a time &amp; come in</b><p>Pick a date online, then design, shape, engrave and polish your ring in the studio.</p></div></div>
+      </div>
+      <div class="ask">
+        <div class="q">What are you celebrating?</div>
+        <div class="opts" id="askOpts">
+          <button data-k="engaged">Getting engaged</button><button data-k="wedding">Getting married</button><button data-k="anniv">Anniversary or birthday</button><button data-k="date">Date night / fun</button><button data-k="unsure">Not sure yet</button><button data-k="custom">Something one of a kind</button>
+        </div>
+        <div class="pick" id="pick"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- prices at a glance -->
+  <div class="sec rv" id="prices">
+    <div class="label">Prices at a glance</div>
+    <table class="prices">
+      <tr><th>Metal</th><th style="text-align:right">Per ring</th></tr>
+      <tr><td>Sterling silver · 1.5–2.5mm</td><td>$90</td></tr>
+      <tr><td>Sterling silver · 3.5mm / 5mm</td><td>$135 / $165</td></tr>
+      <tr><td>Sterling silver · 7mm / 10mm</td><td>$210 / $250</td></tr>
+      <tr><td>Sterling silver signet · small / large</td><td>$135 / $165</td></tr>
+      <tr><td>10K gold</td><td>$220–$1,400+</td></tr>
+      <tr><td>14K gold</td><td>$550–$2,200+</td></tr>
+      <tr><td>18K gold</td><td>$730–$3,200+</td></tr>
+      <tr><td>Platinum Pt950</td><td>$630–$2,600+</td></tr>
+    </table>
+    <p class="pnote">Gold &amp; platinum prices vary with width (1.0–5mm) and ring size. Wedding band sessions start from $194 in 10K.</p>
+  </div>
+
   <!-- booking -->
-  <div class="sec rv">
+  <div class="sec rv" id="book">
     <div class="label">Book an experience</div>
     <div id="cards"></div>
     <a class="big-btn" href="https://booking.ringram1929.com/reservation/course" target="_blank" rel="noopener">See all times &amp; book →</a>
@@ -225,11 +356,77 @@ const COURSES=[
   {img:'382b4b57cb406462300ae7ac4e160098febd8390',m:'1.5–2 hrs · 1–2 people',h:'Not sure? Choose your metal with an artisan',p:'Learn the differences in metal, karat and price first.',pr:'In-store'},
   {img:'17e2bb34c71c2e33d98f57c87a656a8cdc7ad63d',m:'1 hr · consultation',h:'Design Ring Consultation',p:'Designed in NY, made by master jewelers in Japan.',pr:'Custom'}
 ];
-document.getElementById('cards').innerHTML = COURSES.map(c=>`<a class="card ${c.f?'featured':''}" href="${BOOK}" target="_blank" rel="noopener">${c.b?`<span class="badge">${c.b}</span>`:''}
+document.getElementById('cards').innerHTML = COURSES.map((c,i)=>`<a id="c-${i}" class="card ${c.f?'featured':''}" href="${BOOK}" target="_blank" rel="noopener">${c.b?`<span class="badge">${c.b}</span>`:''}
   <div class="img" style="background-image:url('${IMG(c.img)}')"></div>
   <div class="txt"><div class="meta">${c.m}</div><h3>${c.h}</h3><p>${c.p}</p><div class="row"><span class="price">${c.pr}</span><span class="btn">Book</span></div></div></a>`).join('');
 
 document.getElementById('strip').innerHTML = STORIES.map(s=>`<a class="story" href="${IG}${s.code}/" target="_blank" rel="noopener"><img src="../media/story-${s.n}.jpg" alt="" loading="lazy"><div><div class="t">${s.t}</div><h4>${s.h}</h4><p>${s.p}</p><span class="w">Watch ▶</span></div></a>`).join('');
+
+/* ===== "What are you celebrating?" helper ===== */
+const PICKS={
+  engaged:{c:0,h:'Personalized Ring · Gold / Platinum',p:'Make the ring you propose with, or make promise rings together. 2 hours, from $220.'},
+  wedding:{c:2,h:'Wedding Bands · Gold / Platinum',p:"Make each other's wedding bands. 2 hours for two people. Prefer silver? The silver bands session is from $90 per ring."},
+  anniv:{c:1,h:'Anniversary Ring · Gold / Platinum',p:'Celebrate the milestone with a ring for the other hand, plus a special gift from us. 2 hours, from $220.'},
+  date:{c:3,h:'Personalized Ring · Sterling Silver',p:"Our quickest, most affordable session: 1 hour, $90–$250 per ring. A perfect NYC date."},
+  unsure:{c:5,h:'Choose your metal with an artisan',p:'Learn the differences between gold, platinum and silver first, then make your ring in the same visit.'},
+  custom:{c:6,h:'Design Ring Consultation',p:'Design a one-of-a-kind piece or heirloom with us in NY, crafted by master jewelers in Japan.'}
+};
+document.getElementById('askOpts').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#askOpts button').forEach(x=>x.classList.toggle('on',x===b));
+  const p=PICKS[b.dataset.k], el=document.getElementById('pick');
+  el.innerHTML=`<small>We recommend</small><h4>${p.h}</h4><p>${p.p}</p><div class="row"><a class="b1" href="${BOOK}" target="_blank" rel="noopener">Book this</a><a class="b2" href="#c-${p.c}" data-jump="${p.c}">See details</a></div>`;
+  el.classList.remove('on'); void el.offsetWidth; el.classList.add('on');
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('match'));
+  document.getElementById('c-'+p.c).classList.add('match');
+});
+document.addEventListener('click',e=>{const j=e.target.closest('[data-jump]'); if(j){e.preventDefault(); document.getElementById('c-'+j.dataset.jump).scrollIntoView({behavior:'smooth',block:'center'})}});
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href')); if(t&&!a.dataset.jump){e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'})}}));
+
+/* ===== sticky book bar ===== */
+const bar=document.createElement('div'); bar.className='stick';
+bar.innerHTML=`<a href="#prices">Prices</a><a href="#newhere">New here?</a><a class="b" href="${BOOK}" target="_blank" rel="noopener">Book now</a>`;
+document.body.appendChild(bar);
+bar.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}));
+addEventListener('scroll',()=>bar.classList.toggle('on',scrollY>520),{passive:true});
+
+/* ===== welcome intro ===== */
+(function(){
+  const intro=document.getElementById('intro');
+  let seen=false; try{seen=sessionStorage.getItem('rg_intro')==='1'}catch(e){}
+  const done=()=>{if(intro.classList.contains('out'))return; intro.classList.add('out'); document.body.classList.remove('intro-on'); try{sessionStorage.setItem('rg_intro','1')}catch(e){} setTimeout(()=>intro.remove(),1500)};
+  if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches){intro.remove();document.body.classList.remove('intro-on');return}
+  intro.addEventListener('click',done); setTimeout(done,3600);
+})();
+
+/* ===== ring cursor that cycles metals & styles ===== */
+(function(){
+  if(!matchMedia('(pointer:fine)').matches) return;
+  document.body.classList.add('rc');
+  const P={yellow:['#7a5a1e','#d9b25a','#fff3cf','#b88c38'],white:['#77797e','#d8dadd','#ffffff','#a5a7ac'],pink:['#8e4c3b','#d99a82','#ffe6da','#b8725c'],pt:['#5f646b','#c9ced5','#fbfdff','#959ca4'],silver:['#6a6a6a','#cfcfcf','#fdfdfd','#9e9e9e']};
+  const LOOKS=[
+    {m:'yellow',s:'band',l:'18K yellow gold'},{m:'white',s:'stone',l:'14K white gold · birthstone'},{m:'silver',s:'signet',l:'Sterling silver signet'},
+    {m:'pink',s:'band',l:'14K pink gold'},{m:'pt',s:'hammer',l:'Platinum · hammered'},{m:'silver',s:'wide',l:'Sterling silver · 10mm'},{m:'yellow',s:'stone',l:'10K gold · citrine'}
+  ];
+  const ring=(lk,i)=>{const c=P[lk.m], id='g'+i, w=lk.s==='wide'?13:lk.s==='band'?7:8;
+    let s=`<svg viewBox="0 0 60 60"><defs><linearGradient id="${id}" x1="0" x2="1"><stop offset="0" stop-color="${c[0]}"/><stop offset=".35" stop-color="${c[2]}"/><stop offset=".6" stop-color="${c[1]}"/><stop offset="1" stop-color="${c[0]}"/></linearGradient></defs>
+      <ellipse cx="30" cy="${30+w/2}" rx="20" ry="11" fill="none" stroke="${c[0]}" stroke-width="5"/>
+      <path d="M10 ${30} v${w} a20 11 0 0 0 40 0 v-${w} a20 11 0 0 1 -40 0z" fill="url(#${id})"/>
+      <ellipse cx="30" cy="30" rx="20" ry="11" fill="none" stroke="${c[2]}" stroke-width="2.6"/>
+      <ellipse cx="30" cy="30" rx="17.6" ry="9" fill="none" stroke="${c[3]}" stroke-opacity=".6" stroke-width="1"/>`;
+    if(lk.s==='hammer') for(let k=0;k<9;k++) s+=`<circle cx="${14+k*4}" cy="${33+(k%3)*2+w/3}" r="1.4" fill="#fff" opacity=".45"/>`;
+    if(lk.s==='stone') s+=`<circle cx="30" cy="${41+w/2-3}" r="3.6" fill="${c[2]}"/><circle cx="30" cy="${41+w/2-3}" r="2.6" fill="${lk.l.includes('citrine')?'#e89a1c':'#7fd3e0'}"/><circle cx="29" cy="${40+w/2-3}" r=".9" fill="#fff"/>`;
+    if(lk.s==='signet') s+=`<ellipse cx="30" cy="40" rx="9" ry="5.2" fill="url(#${id})" stroke="${c[2]}"/><text x="30" y="42" text-anchor="middle" font-size="5.5" font-family="Georgia,serif" font-style="italic" fill="${c[0]}">R</text>`;
+    return s+'</svg>';};
+  const rc=document.getElementById('rc'), dot=document.getElementById('rcdot'), lbl=rc.querySelector('.lbl');
+  rc.insertAdjacentHTML('afterbegin',LOOKS.map(ring).join(''));
+  const svgs=[...rc.querySelectorAll('svg')]; let cur=0;
+  const show=()=>{svgs.forEach((s,i)=>s.style.opacity=i===cur?1:0); lbl.textContent=LOOKS[cur].l};
+  show(); setInterval(()=>{cur=(cur+1)%LOOKS.length; show()},1600);
+  let mx=-99,my=-99,x=-99,y=-99;
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`;rc.classList.toggle('hov',!!e.target.closest('a,button,summary'))});
+  (function loop(){x+=(mx-x)*.22;y+=(my-y)*.22;rc.style.transform=`translate(${x}px,${y}px)`;requestAnimationFrame(loop)})();
+})();
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
