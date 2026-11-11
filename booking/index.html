@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ringram New York · Book your ring-making experience</title>
+<meta name="description" content="Craft your own ring from scratch at ringram, 223 Mott St, SoHo. Personalized, anniversary and wedding band workshops.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e0e0e;--ivory:#f6f1e7;--sand:#ece3d3;--gold:#b8924a;--gold2:#e3c88a;--muted:#6f685c;--line:rgba(14,14,14,.1);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost','Futura','Helvetica Neue',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);font-weight:300;background:var(--ivory);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.page{max-width:540px;margin:0 auto;padding:0 0 60px;position:relative}
+
+/* top pill */
+.pill{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:5;background:rgba(14,14,14,.72);backdrop-filter:blur(10px);color:var(--gold2);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;padding:7px 14px;border-radius:999px;white-space:nowrap;font-weight:400}
+
+/* video collage */
+.collage{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:var(--ink)}
+.tile{position:relative;aspect-ratio:9/16;overflow:hidden;background:#1b1a18;display:block}
+.tile video,.tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.tile:hover video{transform:scale(1.06)}
+.tile .play{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:6px;background:rgba(255,255,255,.88);display:grid;place-items:center;opacity:.9}
+.tile .play:after{content:"";border-left:7px solid var(--ink);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;margin-left:2px}
+.tile.all{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:radial-gradient(circle at 50% 35%,#2a2620,#0e0e0e);color:#fff;text-align:center;padding:10px}
+.tile.all b{font-family:var(--serif);font-style:italic;font-weight:500;font-size:22px;line-height:1.05;color:var(--gold2)}
+.tile.all span{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#cfc6b6}
+.collage:after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(180deg,rgba(246,241,231,0) 0%,rgba(246,241,231,.75) 55%,var(--ivory) 100%);pointer-events:none}
+.collage .caption{position:absolute;left:0;right:0;bottom:84px;z-index:2;text-align:center;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);pointer-events:none}
+
+/* identity */
+.id{position:relative;z-index:3;text-align:center;padding:0 22px;margin-top:-62px}
+.logo{width:116px;height:116px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;margin:0 auto;font-size:27px;line-height:1.02;font-weight:300;letter-spacing:.03em;box-shadow:0 0 0 5px var(--ivory),0 0 0 6.5px var(--gold),0 18px 40px -16px rgba(0,0,0,.55);position:relative}
+.logo:after{content:"";position:absolute;inset:-12px;border-radius:50%;border:1px dashed rgba(184,146,74,.5);animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{font-weight:400;font-size:32px;letter-spacing:.02em;margin:22px 0 4px}
+h1 em{font-family:var(--serif);font-style:italic;color:var(--gold);font-weight:500}
+.tag{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.bio{max-width:420px;margin:16px auto 0;font-size:16.5px;color:#3b3731}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;display:flex;gap:6px;align-items:center}
+.socials{display:flex;justify-content:center;gap:12px;margin-top:20px}
+.socials a{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--gold2);display:grid;place-items:center;transition:transform .25s,background .25s}
+.socials a:hover{transform:translateY(-3px);background:var(--gold);color:#fff}
+.socials svg{width:19px;height:19px}
+.addr{margin-top:14px;font-size:13px;color:var(--muted)}
+
+/* sections */
+.sec{padding:0 18px;margin-top:34px}
+.label{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:14px;font-weight:400;display:flex;align-items:center;gap:12px}
+.label:before,.label:after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* offer banner */
+.offer{position:relative;overflow:hidden;border-radius:22px;background:var(--ink);color:#fff;padding:24px 22px 22px}
+.offer:before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:22px solid var(--gold);opacity:.22}
+.offer .k{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2)}
+.offer h2{font-weight:300;font-size:27px;line-height:1.1;margin:8px 0 6px}
+.offer h2 em{font-family:var(--serif);font-style:italic;color:var(--gold2);font-weight:500}
+.offer p{font-size:14.5px;color:#cfc6b6;max-width:330px}
+.offer .nums{display:flex;gap:10px;margin-top:16px}
+.offer .nums div{flex:1;border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:10px 12px}
+.offer .nums b{display:block;font-family:var(--serif);font-size:32px;line-height:1;color:var(--gold2);font-weight:500}
+.offer .nums span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#cfc6b6}
+.mini-offer{margin-top:10px;display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.gem{flex:0 0 42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,#f6c46a 25%,#e89a1c 55%,#8a4f06 100%);box-shadow:0 6px 14px -6px #e89a1c}
+.mini-offer b{font-weight:500}
+.mini-offer small{display:block;color:var(--muted);font-size:13px}
+
+/* booking cards */
+.card{display:flex;gap:14px;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:20px;padding:10px;margin-bottom:12px;transition:transform .3s,box-shadow .3s;position:relative}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 30px -20px rgba(0,0,0,.4)}
+.card .img{flex:0 0 112px;border-radius:14px;background-size:cover;background-position:center;min-height:112px}
+.card .txt{flex:1;display:flex;flex-direction:column;padding:4px 4px 2px 0}
+.card .meta{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.card h3{font-weight:400;font-size:17.5px;line-height:1.2;margin:4px 0}
+.card p{font-size:13px;color:var(--muted);line-height:1.4}
+.card .row{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center}
+.card .price{font-family:var(--serif);font-size:21px;font-weight:500}
+.card .btn{background:var(--ink);color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:9px 14px;border-radius:999px;font-weight:400}
+.card:hover .btn{background:var(--gold)}
+.card.featured{border:1.5px solid var(--gold);background:linear-gradient(180deg,#fffaf0,#fff)}
+.card .badge{position:absolute;top:-9px;left:18px;background:var(--gold);color:#fff;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+
+.big-btn{display:flex;justify-content:center;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:999px;padding:17px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;transition:background .3s}
+.big-btn:hover{background:var(--gold)}
+.big-btn.light{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.big-btn.light:hover{background:var(--sand)}
+
+/* stories strip */
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 18px 10px;margin:0 -18px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.story{flex:0 0 72%;scroll-snap-align:center;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;gap:0}
+.story img{flex:0 0 96px;width:96px;object-fit:cover}
+.story div{padding:14px 14px 12px}
+.story .t{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.story h4{font-weight:400;font-size:16px;line-height:1.25;margin:4px 0 6px}
+.story p{font-size:12.5px;color:var(--muted);line-height:1.4}
+.story .w{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--gold)}
+
+/* how + faq */
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.how div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 6px}
+.how b{display:block;font-family:var(--serif);font-size:26px;color:var(--gold);line-height:1;font-weight:500}
+.how span{font-size:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:8px}
+summary{cursor:pointer;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary:after{content:"+";color:var(--gold);font-size:20px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{font-size:14px;color:var(--muted);margin-top:8px}
+
+footer{text-align:center;margin-top:40px;padding:0 22px;font-size:12.5px;color:var(--muted)}
+footer .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);margin-bottom:6px}
+.concept{margin-top:18px;font-size:11px;letter-spacing:.06em;opacity:.8}
+.concept b{color:var(--gold);font-weight:400}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media (max-width:420px){h1{font-size:28px}.card .img{flex-basis:96px}.how span{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="pill">✦ ringram · ring-making studio · NYC</div>
+
+  <!-- video collage: "A ring & The story" reels -->
+  <div class="collage" id="collage"></div>
+
+  <div class="id">
+    <div class="logo">ring<br>ram</div>
+    <h1>ringram <em>New York</em></h1>
+    <div class="tag">Craft your own ring from scratch</div>
+    <p class="bio">Hammer it, shape it, engrave it and polish it, side by side with our artisans, in an afternoon in SoHo. You leave wearing it.</p>
+    <div class="chips">
+      <span class="chip">💍 Personalized</span><span class="chip">🥂 Anniversary</span><span class="chip">🤍 Wedding bands</span><span class="chip">✎ Ring tattoo</span>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/ringram_ny/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a href="sms:+16469570489" aria-label="Text us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/></svg></a>
+      <a href="mailto:ringram.ny@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      <a href="https://maps.google.com/?q=223+Mott+St+New+York+NY+10012" target="_blank" rel="noopener" aria-label="Directions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></a>
+    </div>
+    <div class="addr">223 Mott St, SoHo, New York · (646) 957-0489 · LA coming spring 2027</div>
+  </div>
+
+  <!-- offers -->
+  <div class="sec rv">
+    <div class="label">This month</div>
+    <a class="offer" href="https://www.instagram.com/p/DflQ4FyqXmL/" target="_blank" rel="noopener" style="display:block">
+      <div class="k">One day only · Thursday, Nov 27</div>
+      <h2>Our first <em>Black Friday</em></h2>
+      <p>Launching ringram+, a new way to experience ringram: you design it, we make it.</p>
+      <div class="nums"><div><b>30%</b><span>off gold &amp; platinum</span></div><div><b>20%</b><span>off silver</span></div></div>
+    </a>
+    <div class="mini-offer"><span class="gem"></span><div><b>November birthstone: citrine</b><small>Warm golden hues and 50% off citrine birthstones all month.</small></div></div>
+  </div>
+
+  <!-- booking -->
+  <div class="sec rv">
+    <div class="label">Book an experience</div>
+    <div id="cards"></div>
+    <a class="big-btn" href="https://booking.ringram1929.com/reservation/course" target="_blank" rel="noopener">See all times &amp; book →</a>
+  </div>
+
+  <!-- stories -->
+  <div class="sec rv">
+    <div class="label">A ring &amp; the story</div>
+    <div class="strip" id="strip"></div>
+  </div>
+
+  <!-- how it works -->
+  <div class="sec rv">
+    <div class="label">How it works</div>
+    <div class="how"><div><b>01</b><span>Design</span></div><div><b>02</b><span>Shape</span></div><div><b>03</b><span>Engrave</span></div><div><b>04</b><span>Wear it</span></div></div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="sec rv">
+    <div class="label">Good to know</div>
+    <details><summary>Who can come?</summary><p>Each booking is for 1–2 people: couples, friends, parent and child, or just you. Wedding band sessions are for 2.</p></details>
+    <details><summary>Gold, platinum or silver?</summary><p>Gold comes in 10K, 14K or 18K (yellow, white or pink), plus Pt950 platinum, in 1.0–5mm widths (1.0mm is 10K only). Sterling silver is a flat price per ring, from 1.5mm to 10mm, plus signet styles. Undecided? Book the session where you choose your metal with an artisan.</p></details>
+    <details><summary>Can I engrave a drawing?</summary><p>Yes. Our "ring tattoo" lets you engrave handwriting, a doodle or even your pet onto your ring.</p></details>
+    <details><summary>Need a different start time?</summary><p>Start times can be flexible. Text us at (646) 957-0489.</p></details>
+    <details><summary>Want something one of a kind?</summary><p>Book a Design Ring Consultation. Design it with our artisans in NY, and our master jewelers in Japan bring it to life.</p></details>
+  </div>
+
+  <div class="sec">
+    <a class="big-btn light" href="https://www.instagram.com/ringram_ny/" target="_blank" rel="noopener">Watch more stories on Instagram</a>
+  </div>
+
+  <footer>
+    <div class="sig">Every ring tells a story. What's yours?</div>
+    <div>© 2026 ringram · 223 Mott St, New York, NY 10012</div>
+    <div class="concept">Concept page by <b>Virtual Media Hive</b></div>
+  </footer>
+</div>
+
+<script>
+const IG='https://www.instagram.com/reel/';
+const BOOK='https://booking.ringram1929.com/reservation/course';
+const IMG=h=>`https://items-images-production.s3.us-west-2.amazonaws.com/files/${h}/original.png`;
+const STORIES=[
+  {n:1,code:'DfYNzrth8Gj',t:'Anniversary',h:'18 years together, 6 married',p:'A new pair for the other hand, so they carry each other every day.'},
+  {n:2,code:'Dd9-jEqB1MK',t:'Wedding',h:'Wedding rings, made together',p:'Making the bands became part of the wedding story too.'},
+  {n:3,code:'DduRL8Zh3TM',t:'Family',h:'A father & son afternoon',p:'Time to slow down, make something together and laugh.'},
+  {n:4,code:'DeiCRlShAIU',t:'Friends',h:'A bond worth wearing',p:'Matching rings made by hand, side by side.'},
+  {n:5,code:'DfGFbWph7Dj',t:'Milestones',h:'A birthday & an anniversary',p:'Already planning the next ring for the next chapter.'},
+  {n:6,code:'DeQEIFJBLBH',t:'Couples',h:'Made for each other',p:'Two rings, two makers, one story.'},
+  {n:7,code:'De0D2Cch0aG',t:'Tribute',h:'Some bonds stay forever',p:'A ring to honor someone you love.'}
+];
+document.getElementById('collage').innerHTML = STORIES.map(s=>`<a class="tile" href="${IG}${s.code}/" target="_blank" rel="noopener" aria-label="Watch: ${s.h}">
+  <video src="../media/story-${s.n}.mp4" poster="../media/story-${s.n}.jpg" muted loop playsinline autoplay preload="metadata"></video><span class="play"></span></a>`).join('')
+  + `<a class="tile all" href="https://www.instagram.com/ringram_ny/reels/" target="_blank" rel="noopener"><b>A ring &amp;<br>the story</b><span>See all →</span></a>`;
+// stagger playback so tiles don't loop in sync
+document.querySelectorAll('.collage video').forEach((v,i)=>{v.addEventListener('loadedmetadata',()=>{try{v.currentTime=(i*0.8)%Math.max(1,v.duration-0.5)}catch(e){}});});
+
+const COURSES=[
+  {f:true,b:'Most popular',img:'016bb15df2dc5d56352b4af74e397702066e469d',m:'2 hrs · 1–2 people',h:'Personalized Ring · Gold / Platinum',p:'10K, 14K, 18K gold or Pt950, 1.0–5mm.',pr:'$220+'},
+  {img:'eaf3200600600824e3b6a98320f634c2a6511c0d',m:'2 hrs · 1–2 people',h:'Anniversary Ring · Gold / Platinum',p:'Celebrate any milestone, with a special gift from us.',pr:'$220+'},
+  {img:'e6c1e8b36fdb9eaddefbb8b4084550fd9151b750',m:'2 hrs · 2 people',h:'Wedding Bands · Gold / Platinum',p:"Make each other's wedding bands.",pr:'$194+'},
+  {img:'e41517c07bf8dd126c8e18da55479f2184a4886e',m:'1 hr · 1–2 people',h:'Personalized Ring · Sterling Silver',p:'Flat price per ring, signets included.',pr:'$90–$250'},
+  {img:'61661efd0d80a55cc966e88edd6ae1f2f04884c0',m:'1 hr · 2 people',h:'Wedding Bands · Sterling Silver',p:'Flat price per ring, 1.5–10mm.',pr:'$90–$250'},
+  {img:'382b4b57cb406462300ae7ac4e160098febd8390',m:'1.5–2 hrs · 1–2 people',h:'Not sure? Choose your metal with an artisan',p:'Learn the differences in metal, karat and price first.',pr:'In-store'},
+  {img:'17e2bb34c71c2e33d98f57c87a656a8cdc7ad63d',m:'1 hr · consultation',h:'Design Ring Consultation',p:'Designed in NY, made by master jewelers in Japan.',pr:'Custom'}
+];
+document.getElementById('cards').innerHTML = COURSES.map(c=>`<a class="card ${c.f?'featured':''}" href="${BOOK}" target="_blank" rel="noopener">${c.b?`<span class="badge">${c.b}</span>`:''}
+  <div class="img" style="background-image:url('${IMG(c.img)}')"></div>
+  <div class="txt"><div class="meta">${c.m}</div><h3>${c.h}</h3><p>${c.p}</p><div class="row"><span class="price">${c.pr}</span><span class="btn">Book</span></div></div></a>`).join('');
+
+document.getElementById('strip').innerHTML = STORIES.map(s=>`<a class="story" href="${IG}${s.code}/" target="_blank" rel="noopener"><img src="../media/story-${s.n}.jpg" alt="" loading="lazy"><div><div class="t">${s.t}</div><h4>${s.h}</h4><p>${s.p}</p><span class="w">Watch ▶</span></div></a>`).join('');
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

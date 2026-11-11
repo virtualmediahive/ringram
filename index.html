@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ringram New York — Make the ring. Keep the story.</title>
+<meta name="description" content="ringram is a ring-making studio in SoHo, New York. Design your ring, then hammer, shape, engrave and polish it yourself with our artisans.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0e0e0e; --ink2:#1c1b19; --ivory:#f6f1e7; --sand:#ebe2d2; --stone:#d9cdb8;
+  --gold:#b8924a; --gold2:#e3c88a; --muted:#6f685c; --line:rgba(14,14,14,.12);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost','Futura','Helvetica Neue',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;background:var(--ivory);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (pointer:fine){ body.has-cursor, body.has-cursor a, body.has-cursor button, body.has-cursor input, body.has-cursor select, body.has-cursor label, body.has-cursor textarea{cursor:none} }
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:400}
+h1,h2,h3{font-weight:300;letter-spacing:.01em;line-height:1.08}
+h2{font-size:clamp(34px,4.6vw,58px)}
+h2 em,h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--gold)}
+.lede{font-size:19px;color:var(--muted);max-width:620px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;text-decoration:none;transition:transform .3s,background .3s,color .3s}
+.btn-gold{background:var(--gold2);color:var(--ink)}
+.btn-gold:hover{background:#fff;transform:translateY(-2px)}
+.btn-line{border:1px solid currentColor}
+.btn-line:hover{background:var(--ink);color:var(--ivory)}
+.btn-dark{background:var(--ink);color:var(--ivory)}
+.btn-dark:hover{background:var(--gold);transform:translateY(-2px)}
+
+/* concept ribbon */
+.concept{background:var(--ink);color:#bfb6a5;font-size:12px;letter-spacing:.08em;text-align:center;padding:7px 12px}
+.concept b{color:var(--gold2);font-weight:400}
+
+/* nav */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:13px;line-height:1;text-align:center;letter-spacing:.04em;font-weight:300}
+.logo-word{font-size:15px;letter-spacing:.24em;text-transform:lowercase}
+.links{display:flex;gap:30px;align-items:center}
+.links a{font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;position:relative;padding:6px 0}
+.links a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s}
+.links a:hover:after,.links a.on:after{width:100%}
+.menu-btn{display:none;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+
+/* pages */
+.page{display:none}
+.page.on{display:block;animation:pageIn .6s ease}
+@keyframes pageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--ink)}
+.hero-bg{position:absolute;inset:0;background:url('https://items-images-production.s3.us-west-2.amazonaws.com/files/016bb15df2dc5d56352b4af74e397702066e469d/original.png') 78% 30%/cover no-repeat;transform:scale(1.08);animation:slowzoom 18s ease-out forwards}
+@keyframes slowzoom{to{transform:scale(1)}}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#0e0e0e 0%,rgba(14,14,14,.94) 30%,rgba(14,14,14,.55) 55%,rgba(14,14,14,.05) 80%)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:18%;z-index:1;background:linear-gradient(180deg,rgba(246,241,231,0),var(--ivory))}
+.hero .wrap{position:relative;z-index:2;width:100%;padding:40px 28px 170px}
+.hero h1{font-size:clamp(48px,7.6vw,104px);max-width:760px;margin:22px 0 26px}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(40px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.hero p{font-size:20px;max-width:520px;color:#e7dfd0;margin-bottom:36px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .btn-line{color:#fff}
+.hero .btn-line:hover{background:#fff;color:var(--ink)}
+.hero-stats{display:flex;gap:44px;margin-top:56px;color:#d9cfbd;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.hero-stats b{display:block;font-family:var(--serif);font-size:38px;font-weight:400;color:var(--gold2);letter-spacing:0;text-transform:none}
+
+/* marquee */
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:20px 0;background:var(--ivory)}
+.marquee-track{display:flex;gap:56px;width:max-content;animation:mq 40s linear infinite;font-family:var(--serif);font-style:italic;font-size:30px;color:var(--ink2)}
+.marquee-track span:nth-child(even){color:var(--gold);font-style:normal;font-family:var(--sans);font-size:18px;align-self:center}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section.block{padding:120px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+.head .lede{margin-top:16px}
+
+/* how it works */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line)}
+.step{background:var(--ivory);padding:38px 30px;min-height:280px;transition:background .4s}
+.step:hover{background:#fff}
+.step .n{font-family:var(--serif);font-size:56px;color:var(--gold);line-height:1}
+.step h3{font-size:24px;margin:18px 0 10px}
+.step p{color:var(--muted);font-size:16px}
+
+/* perfect for */
+.dark{background:var(--ink);color:var(--ivory)}
+.dark .lede{color:#b9b0a0}
+.pf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pf{position:relative;border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px 26px 26px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:border-color .4s,transform .4s;text-decoration:none}
+.pf:before{content:"";position:absolute;inset:auto -40% -60% auto;width:220px;height:220px;border-radius:50%;border:14px solid var(--gold);opacity:.08;transition:opacity .5s,transform .8s}
+.pf:hover{border-color:var(--gold);transform:translateY(-6px)}
+.pf:hover:before{opacity:.35;transform:rotate(30deg) scale(1.1)}
+.pf .ic{font-family:var(--serif);font-style:italic;color:var(--gold2);font-size:20px}
+.pf h3{font-size:27px;margin-bottom:8px}
+.pf p{font-size:15px;color:#b9b0a0}
+.pf .go{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-top:16px}
+
+/* reels */
+.reels{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 28px 30px;scrollbar-width:thin}
+.reel{flex:0 0 330px;scroll-snap-align:start;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 20px 40px -24px rgba(0,0,0,.35)}
+.reel iframe{width:100%;height:590px;border:0;display:block}
+.reel{flex-basis:300px;cursor:pointer;position:relative}
+.reel .vid{position:relative;aspect-ratio:9/16;background:#111;overflow:hidden}
+.reel .vid video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.reel:hover .vid video{transform:scale(1.04)}
+.vid .pbtn{position:absolute;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;background:rgba(246,241,231,.9);display:grid;place-items:center;transition:transform .3s,background .3s;box-shadow:0 10px 30px -10px rgba(0,0,0,.6)}
+.vid .pbtn:after{content:"";border-left:16px solid var(--ink);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.reel:hover .pbtn,.story .vid:hover .pbtn{transform:scale(1.12);background:var(--gold2)}
+.vid .sound{position:absolute;left:12px;bottom:12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.45);padding:5px 10px;border-radius:999px}
+.story .vid{cursor:pointer;border-top:1px solid var(--line)}
+#lb{position:fixed;inset:0;z-index:200;background:rgba(10,10,10,.92);display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:20px}
+#lb.on{display:flex;animation:pageIn .35s}
+#lb video{max-height:82vh;max-width:min(92vw,470px);border-radius:16px;background:#000}
+#lb .bar{display:flex;gap:12px;align-items:center}
+#lb .bar a,#lb .bar button{color:var(--ivory);font-size:12px;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.3);padding:10px 16px;border-radius:999px}
+#lb .bar a:hover,#lb .bar button:hover{background:var(--ivory);color:var(--ink)}
+.reel .cap{padding:14px 16px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
+.reel .cap b{color:var(--ink);font-weight:400}
+.reel-nav{display:flex;gap:10px}
+.reel-nav button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);font-size:20px;transition:background .3s}
+.reel-nav button:hover{background:var(--ink);color:#fff}
+
+/* experiences */
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.course{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .4s,box-shadow .4s}
+.course:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(0,0,0,.4)}
+.course .img{aspect-ratio:4/3;background-size:cover;background-position:center}
+.course .body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.course .meta{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.course h3{font-size:23px}
+.course p{font-size:15px;color:var(--muted);flex:1}
+.course .price{font-family:var(--serif);font-size:26px}
+.course .row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.course .row a{font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+
+/* stories teaser + stories page */
+.quote-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.q{border-top:1px solid var(--ink);padding-top:22px}
+.q blockquote{font-family:var(--serif);font-size:27px;line-height:1.25;font-style:italic}
+.q cite{display:block;margin-top:14px;font-style:normal;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.chip{padding:10px 18px;border-radius:999px;border:1px solid var(--line);font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;background:transparent}
+.chip.on,.chip:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.stories{columns:3;column-gap:24px}
+.story{break-inside:avoid;margin-bottom:24px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.story .txt{padding:24px 24px 18px}
+.story .tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.story h3{font-size:25px;margin:8px 0 10px;line-height:1.15}
+.story p{font-size:15px;color:var(--muted)}
+.story blockquote{font-family:var(--serif);font-style:italic;font-size:21px;margin-top:14px;line-height:1.3}
+.story .who{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.story .who a{color:var(--ink)}
+.story iframe{width:100%;height:560px;border:0;display:block;border-top:1px solid var(--line)}
+.story .load{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;border-top:1px solid var(--line);font-size:13px;letter-spacing:.16em;text-transform:uppercase;background:var(--sand);transition:background .3s}
+.story .load:hover{background:var(--gold2)}
+.page-hero{padding:90px 0 60px}
+.page-hero h1{font-size:clamp(46px,6.4vw,86px);margin:16px 0 20px;max-width:900px}
+
+/* designer */
+.designer{display:grid;grid-template-columns:1.08fr 1fr;gap:46px;align-items:start}
+.stage{position:sticky;top:100px;background:radial-gradient(120% 90% at 50% 30%,#fffdf8 0%,#efe6d6 60%,#e2d6c1 100%);border-radius:26px;border:1px solid var(--line);padding:22px;overflow:hidden}
+.stage-top{display:flex;justify-content:space-between;align-items:center}
+.ring-tabs{display:flex;background:rgba(255,255,255,.6);border-radius:999px;padding:4px}
+.ring-tabs button{padding:8px 16px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.ring-tabs button.on{background:var(--ink);color:#fff}
+.stage svg.main{width:100%;height:auto;display:block;touch-action:none}
+.stage .hint{text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.spec div{background:rgba(255,255,255,.65);border-radius:12px;padding:10px 12px}
+.spec small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.spec b{font-weight:400;font-size:15px}
+.est{margin-top:14px;display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--ivory);border-radius:14px;padding:16px 18px}
+.est .big{font-family:var(--serif);font-size:34px;color:var(--gold2);line-height:1}
+.est small{display:block;font-size:11px;color:#a89f8f;letter-spacing:.06em;max-width:260px}
+.ctrl{border-bottom:1px solid var(--line);padding:22px 0}
+.ctrl:first-child{padding-top:0}
+.ctrl h4{font-weight:400;font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;display:flex;justify-content:space-between}
+.ctrl h4 span{color:var(--muted);letter-spacing:.06em;text-transform:none;font-size:14px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{padding:10px 16px;border-radius:999px;border:1px solid var(--line);font-size:14px;transition:all .25s;background:#fff8}
+.opt:hover{border-color:var(--ink)}
+.opt.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.opt[disabled]{opacity:.3;pointer-events:none}
+.swatch{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-right:7px;border:1px solid rgba(0,0,0,.15)}
+.stones{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.stonebtn{aspect-ratio:1;border-radius:50%;border:2px solid transparent;position:relative;transition:transform .25s}
+.stonebtn:hover{transform:scale(1.1)}
+.stonebtn.on{border-color:var(--ink)}
+.stonebtn span{position:absolute;inset:5px;border-radius:50%}
+.stonebtn em{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-style:normal;font-size:10px;color:var(--muted);white-space:nowrap}
+.stones-wrap{padding-bottom:16px}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{font:inherit;font-weight:300;font-size:16px;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--gold2);border-color:var(--gold)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-grid .full{grid-column:1/-1}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px;margin-top:34px}
+.form-card h3{font-size:30px;margin-bottom:6px}
+.form-card .sub{color:var(--muted);margin-bottom:24px}
+.mini-note{font-size:13px;color:var(--muted)}
+.success{display:none;text-align:center;padding:30px 10px}
+.success.on{display:block;animation:pageIn .6s}
+.success svg{width:220px;margin:0 auto}
+.success h3{font-size:34px;margin:10px 0}
+
+/* guide */
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px}
+.panel h3{font-size:28px;margin-bottom:6px}
+.karat-bar{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;margin:22px 0 12px}
+.karat-bar i{aspect-ratio:1/2.2;border-radius:3px;background:#e7e2da;transition:background .5s,transform .5s}
+.karat-bar i.g{background:linear-gradient(160deg,#fff1c4,#d8b264 45%,#a67e33)}
+.karat-bar i.pt{background:linear-gradient(160deg,#fbfdff,#c7ccd3 45%,#8b9198)}
+.karat-bar i.ag{background:linear-gradient(160deg,#fff,#d1d1d1 45%,#9a9a9a)}
+.karat-big{font-family:var(--serif);font-size:64px;line-height:1;color:var(--gold)}
+.analogy{background:var(--sand);border-radius:14px;padding:16px 18px;margin-top:16px;font-size:16px}
+.analogy b{font-weight:500}
+.compare{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
+.cmp{text-align:center;font-size:13px;color:var(--muted);cursor:pointer;border-radius:14px;padding:12px 6px;border:1px solid transparent;transition:all .3s}
+.cmp.on{border-color:var(--gold);background:#fffaf0;color:var(--ink)}
+.cmp b{display:block;color:var(--ink);font-weight:400;font-size:17px}
+.finger-row{display:flex;gap:26px;align-items:flex-end;justify-content:center;margin-top:10px}
+.tones{display:flex;gap:8px}
+.tones button{width:24px;height:24px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.tones button.on{box-shadow:0 0 0 2px var(--ink)}
+.cvk{margin-top:28px}
+.table{width:100%;border-collapse:collapse;font-size:15px;margin-top:10px}
+.table td,.table th{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;font-weight:300}
+.table th{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+/* cta band */
+.cta-band{position:relative;overflow:hidden;border-radius:28px;background:var(--ink);color:var(--ivory);padding:80px 60px;display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:30px}
+.cta-band h2{color:var(--ivory)}
+.cta-band svg{width:100%;max-width:340px;justify-self:center;animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px) rotate(-4deg)}}
+
+footer{background:var(--ink);color:#b9b0a0;padding:80px 0 30px;margin-top:120px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer h5{font-weight:400;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:14px}
+footer a{display:block;text-decoration:none;margin-bottom:6px}
+footer a:hover{color:#fff}
+footer .bottom{border-top:1px solid #2a2926;margin-top:60px;padding-top:24px;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer .logo-mark{background:#fff;color:var(--ink);width:70px;height:70px;font-size:18px}
+
+/* custom ring cursor */
+#cursor{position:fixed;left:0;top:0;width:46px;height:46px;pointer-events:none;z-index:9999;transform:translate(-100px,-100px);transition:width .25s,height .25s,opacity .3s;margin:-23px 0 0 -23px;will-change:transform}
+#cursor svg{width:100%;height:100%;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#cursor.hover svg{transform:scale(1.45) rotate(-18deg)}
+#cursor.down svg{transform:scale(.8)}
+#dot{position:fixed;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--gold);pointer-events:none;z-index:10000;transform:translate(-100px,-100px)}
+@media (pointer:coarse){#cursor,#dot{display:none}}
+
+/* scroll ring */
+#scrollRing{position:fixed;right:22px;bottom:22px;z-index:60;width:86px;height:86px;border-radius:50%;background:rgba(246,241,231,.9);backdrop-filter:blur(8px);box-shadow:0 14px 30px -14px rgba(0,0,0,.4);display:grid;place-items:center}
+#scrollRing svg{width:86px;height:86px}
+#scrollRing .lbl{position:absolute;bottom:-20px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+.reveal{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--ivory);flex-direction:column;padding:20px;gap:14px;border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+  .menu-btn{display:block}
+  .steps,.pf-grid{grid-template-columns:1fr 1fr}
+  .courses,.quote-strip{grid-template-columns:1fr}
+  .stories{columns:1}
+  .designer,.guide-grid,.cta-band{grid-template-columns:1fr}
+  .stage{position:relative;top:0}
+  footer .cols{grid-template-columns:1fr 1fr}
+  .form-grid{grid-template-columns:1fr}
+  .cta-band{padding:50px 28px}
+  .hero-stats{gap:24px;flex-wrap:wrap}
+}
+@media (min-width:981px) and (max-width:1200px){.stories{columns:2}}
+</style>
+</head>
+<body class="has-cursor">
+
+<div class="concept">Concept redesign prepared for ringram New York by <b>Virtual Media Hive</b> · not the live site</div>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="logo" href="#home" data-link>
+      <span class="logo-mark">ring<br>ram</span>
+      <span class="logo-word">New York</span>
+    </a>
+    <div class="links" id="links">
+      <a href="#home" data-link>Home</a>
+      <a href="#experiences" data-link>Experiences</a>
+      <a href="#design" data-link>Design your ring</a>
+      <a href="#guide" data-link>Metal &amp; width guide</a>
+      <a href="#stories" data-link>Stories</a>
+      <a class="btn btn-dark" href="#design" data-link style="padding:11px 20px;color:var(--ivory)">Request a date</a>
+    </div>
+    <button class="menu-btn" id="menuBtn">Menu</button>
+  </div>
+</nav>
+
+<!-- ================= HOME ================= -->
+<main class="page" id="page-home">
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="eyebrow">Ring-making studio · 223 Mott St, SoHo</div>
+      <h1 id="heroTitle">Make the ring. <em>Keep the story.</em></h1>
+      <p>Don't just pick a ring out of a case. At ringram you hammer it to size, shape it, engrave it and polish it yourself, side by side with our artisans, in one afternoon.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#design" data-link>Design your ring →</a>
+        <a class="btn btn-line" href="#stories" data-link>Watch real stories</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>1–2 hrs</b>in the studio</div>
+        <div><b>74.9K</b>following the stories</div>
+        <div><b>Japan</b>trained craft</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="marquee"><div class="marquee-track" id="mq"></div></div>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><div class="eyebrow">How it works</div><h2>From a strip of metal<br>to <em>the one you'll wear.</em></h2></div>
+        <p class="lede">No jewelry experience needed. Bring your person, or come on your own. You leave with your finished ring on your finger.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><div class="n">01</div><h3>Design</h3><p>Choose your metal, width, texture and finish. Add a birthstone or a hidden engraving.</p></div>
+        <div class="step"><div class="n">02</div><h3>Shape</h3><p>Hammer and stretch the band to your exact size with an artisan guiding every strike.</p></div>
+        <div class="step"><div class="n">03</div><h3>Engrave</h3><p>Write a date, a name, a private joke, or a drawing on your ring.</p></div>
+        <div class="step"><div class="n">04</div><h3>Polish &amp; wear</h3><p>Buff it to a mirror shine or a soft matte, then put it on each other's hands.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block dark">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><div class="eyebrow">ringram is perfect for</div><h2>Every promise <em>deserves a ring.</em></h2></div>
+        <p class="lede">Couples, families, best friends, and people treating themselves. Pick the moment you're celebrating and we'll set up the design studio for it.</p>
+      </div>
+      <div class="pf-grid reveal" id="pfGrid"></div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-bottom:70px">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><div class="eyebrow">@ringram_ny on Instagram</div><h2>See it happen <em>in real time.</em></h2></div>
+        <div class="reel-nav"><button onclick="scrollReels(-1)" aria-label="Previous">←</button><button onclick="scrollReels(1)" aria-label="Next">→</button></div>
+      </div>
+    </div>
+    <div class="reels" id="reelStrip"></div>
+  </section>
+
+  <section class="block" style="padding-top:40px">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><div class="eyebrow">Interactive guide</div><h2>What does <em>14K, 2.5mm</em><br>actually look like?</h2></div>
+        <p class="lede">Gold purity and band width are hard to picture. Our guide shows both against everyday objects, on a finger, drawn to scale.</p>
+      </div>
+      <div class="cta-band reveal">
+        <div>
+          <h2>Out of 24 parts,<br><em>how many are gold?</em></h2>
+          <p class="lede" style="color:#b9b0a0;margin:18px 0 28px">10K, 14K, 18K and platinum compared, plus every width from a 1mm whisper to a 10mm statement.</p>
+          <a class="btn btn-gold" href="#guide" data-link>Open the guide →</a>
+        </div>
+        <svg id="ctaRing" viewBox="0 0 400 360"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:20px">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><div class="eyebrow">Experiences</div><h2>Choose your <em>afternoon.</em></h2></div>
+        <a class="btn btn-line" href="#experiences" data-link>All experiences &amp; prices</a>
+      </div>
+      <div class="courses reveal" id="courseTeaser"></div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:20px">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><div class="eyebrow">In their words</div><h2>Every ring <em>tells a story.</em></h2></div>
+        <a class="btn btn-line" href="#stories" data-link>Read all stories</a>
+      </div>
+      <div class="quote-strip reveal" id="quoteStrip"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= EXPERIENCES ================= -->
+<main class="page" id="page-experiences">
+  <div class="wrap page-hero">
+    <div class="eyebrow">Experiences &amp; pricing</div>
+    <h1>Seven ways to <em>make it yours.</em></h1>
+    <p class="lede">Each workshop is for one or two people. Gold and platinum prices depend on karat, width and size. Sterling silver is a flat price per ring.</p>
+  </div>
+  <div class="wrap"><div class="courses" id="courseAll"></div></div>
+</main>
+
+<!-- ================= DESIGN + REQUEST ================= -->
+<main class="page" id="page-design">
+  <div class="wrap page-hero" style="padding-bottom:40px">
+    <div class="eyebrow">Design studio</div>
+    <h1>Design it here. <em>Make it in SoHo.</em></h1>
+    <p class="lede">Build your ring (or both of yours), see it to scale and get an estimate. Then send the design with your request. Our artisans will have it ready when you walk in.</p>
+  </div>
+  <div class="wrap">
+    <div class="designer">
+      <div class="stage" id="stage">
+        <div class="stage-top">
+          <div class="ring-tabs" id="countTabs">
+            <button data-count="1" class="on">One ring</button>
+            <button data-count="2">A pair</button>
+          </div>
+          <div class="ring-tabs" id="editTabs" style="display:none">
+            <button data-edit="0" class="on">Ring 1</button>
+            <button data-edit="1">Ring 2</button>
+          </div>
+        </div>
+        <svg class="main" id="mainRing" viewBox="0 0 400 360"></svg>
+        <div class="hint">Drag to tilt · drawn to scale for your size</div>
+        <div class="spec" id="spec"></div>
+        <div class="est"><div><small>Estimated total</small><div class="big" id="estBig">$—</div></div><small id="estNote"></small></div>
+      </div>
+
+      <div>
+        <div class="ctrl"><h4>Occasion <span id="occLbl"></span></h4><div class="opts" id="occOpts"></div></div>
+        <div class="ctrl"><h4>Metal <span id="metalLbl"></span></h4><div class="opts" id="metalOpts"></div><div class="opts" id="toneOpts" style="margin-top:10px"></div></div>
+        <div class="ctrl"><h4>Style <span id="profLbl"></span></h4><div class="opts" id="profOpts"></div><div class="opts" id="signetOpts" style="margin-top:10px"></div></div>
+        <div class="ctrl"><h4>Band width <span id="widthLbl"></span></h4><div class="opts" id="widthOpts"></div><p class="mini-note" id="widthAnalogy" style="margin-top:10px"></p></div>
+        <div class="ctrl"><h4>Ring size (US) <span id="sizeLbl"></span></h4><input type="range" id="sizeRange" min="3" max="13" step="0.5" value="7"><p class="mini-note">Not sure? We size you in the studio. This just helps us prep.</p></div>
+        <div class="ctrl"><h4>Finish <span id="texLbl"></span></h4><div class="opts" id="texOpts"></div></div>
+        <div class="ctrl stones-wrap"><h4>Birthstone <span id="stoneLbl"></span></h4><div class="stones" id="stoneOpts"></div><div class="opts" id="settingOpts" style="margin-top:28px"></div></div>
+        <div class="ctrl"><h4>Inside engraving <span>shown on the inner band</span></h4>
+          <div class="field"><input id="engr" maxlength="22" placeholder="e.g. husby loves you ♡  or  06.14.2026"></div>
+          <div class="field" id="initField" style="margin-top:12px;display:none"><label>Signet face (initials)</label><input id="initials" maxlength="3" placeholder="RG"></div>
+          <label class="mini-note" style="display:flex;gap:8px;align-items:center;margin-top:12px"><input type="checkbox" id="drawing"> I'd like a drawing engraved, like a pet, a doodle or handwriting (a "ring tattoo")</label>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-card" id="reqForm" novalidate>
+      <div id="formInner">
+        <div class="eyebrow">Step 2</div>
+        <h3>Send your design &amp; request a date</h3>
+        <p class="sub">Your ring design is attached to this request automatically. The studio will receive it and confirm your time and quote.</p>
+        <div class="form-grid">
+          <div class="field"><label>Your name</label><input name="name" required placeholder="First and last name"></div>
+          <div class="field"><label>Partner / guest name (optional)</label><input name="guest" placeholder="Who's making rings with you?"></div>
+          <div class="field"><label>Email</label><input name="email" type="email" required placeholder="you@email.com"></div>
+          <div class="field"><label>Phone</label><input name="phone" placeholder="For appointment texts"></div>
+          <div class="field"><label>Experience</label><select name="course" id="courseSel"></select></div>
+          <div class="field"><label>Preferred date</label><input name="date" type="date"></div>
+          <div class="field"><label>Preferred time</label><select name="time"><option>Morning</option><option selected>Afternoon</option><option>Evening</option><option>Flexible</option></select></div>
+          <div class="field"><label>Is it a surprise?</label><select name="surprise"><option>No</option><option>Yes, keep it quiet!</option></select></div>
+          <div class="field full"><label>Tell us the story (optional)</label><textarea name="story" rows="4" placeholder="Celebrating 6 years married? Proposing next month? Making a ring for your mom? We love to know."></textarea></div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:center;margin-top:24px;flex-wrap:wrap">
+          <button class="btn btn-dark" type="submit">Send my design to ringram →</button>
+          <span class="mini-note" id="formErr" style="color:#a0332b"></span>
+        </div>
+        <p class="mini-note" style="margin-top:14px">Concept note: in this demo, sending opens a pre-written email to the studio with the full design. On the live site this would go straight into ringram's booking inbox.</p>
+      </div>
+      <div class="success" id="success">
+        <svg id="successRing" viewBox="0 0 400 360"></svg>
+        <h3>Your design is <em style="font-family:var(--serif);color:var(--gold)">on its way.</em></h3>
+        <p class="lede" style="margin:0 auto 22px">Your email app should have opened with everything filled in. Hit send, and the studio will reply to confirm your date.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-dark" type="button" id="dlCard">Download design card</button>
+          <a class="btn btn-line" id="mailAgain" href="#">Open email again</a>
+          <a class="btn btn-line" href="https://booking.ringram1929.com/reservation/course" target="_blank" rel="noopener">Pick a time slot</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<!-- ================= GUIDE ================= -->
+<main class="page" id="page-guide">
+  <div class="wrap page-hero">
+    <div class="eyebrow">Metal &amp; width guide</div>
+    <h1>See it before <em>you make it.</em></h1>
+    <p class="lede">Karat (K) is how much of your ring is pure gold. Width is how wide the band sits on your finger. Here's what both look like in real life.</p>
+  </div>
+  <div class="wrap guide-grid">
+    <div class="panel">
+      <div class="eyebrow">Purity</div>
+      <h3>How much is pure metal?</h3>
+      <div class="opts" id="karatOpts" style="margin-top:16px"></div>
+      <div class="karat-bar" id="karatBar"></div>
+      <div style="display:flex;align-items:baseline;gap:14px"><span class="karat-big" id="karatPct"></span><span id="karatSub" class="mini-note"></span></div>
+      <div class="analogy" id="karatAnalogy"></div>
+      <table class="table" id="karatTable"></table>
+    </div>
+    <div class="panel">
+      <div class="eyebrow">Width</div>
+      <h3>How wide is the band?</h3>
+      <p class="mini-note">Tap a width. The band and object are shown 5× life size.</p>
+      <div class="compare" id="cmpOpts"></div>
+      <svg id="cmpSvg" viewBox="0 0 520 260" style="width:100%;margin-top:14px"></svg>
+      <div class="analogy" id="cmpAnalogy"></div>
+    </div>
+    <div class="panel" style="grid-column:1/-1">
+      <div style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:16px">
+        <div><div class="eyebrow">On the hand</div><h3>Every width, side by side</h3><p class="mini-note">Same finger, same scale. Pick a skin tone and metal.</p></div>
+        <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><div class="tones" id="tones"></div><div class="opts" id="handMetal"></div></div>
+      </div>
+      <svg id="handSvg" viewBox="0 0 1000 368" style="width:100%;margin-top:20px"></svg>
+    </div>
+    <div class="panel" style="grid-column:1/-1">
+      <div class="eyebrow">Quick note</div>
+      <h3>Karat vs. carat</h3>
+      <p class="lede" style="max-width:none;font-size:17px">They sound the same, but they're different. <b>Karat (K)</b> measures gold purity: 10K, 14K or 18K at ringram. <b>Carat (ct)</b> measures a gemstone's weight. Birthstones added at ringram are small accent stones set into the band. Our artisans will show you the options in person.</p>
+      <div style="margin-top:22px"><a class="btn btn-dark" href="#design" data-link>Design with this →</a></div>
+    </div>
+  </div>
+</main>
+
+<!-- ================= STORIES ================= -->
+<main class="page" id="page-stories">
+  <div class="wrap page-hero">
+    <div class="eyebrow">Stories</div>
+    <h1>Hands, hearts <em>and a hammer.</em></h1>
+    <p class="lede">Real people who made rings at ringram, from anniversaries and weddings to tributes, family days and NYC trips. Tap any story to watch the reel.</p>
+  </div>
+  <div class="wrap">
+    <div class="filters" id="storyFilters"></div>
+    <div class="stories" id="storyGrid"></div>
+    <div class="cta-band" style="margin-top:60px">
+      <div><h2>What's <em>your</em> story?</h2><p class="lede" style="color:#b9b0a0;margin:18px 0 28px">Design your ring, tell us why it matters, and we'll take it from there.</p><a class="btn btn-gold" href="#design" data-link>Start my ring →</a></div>
+      <svg id="ctaRing2" viewBox="0 0 400 360"></svg>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="logo-mark">ring<br>ram</span>
+        <p style="margin-top:18px;max-width:300px">A ring-making workshop in SoHo, New York, with custom designs crafted by master jewelers in Japan. Coming to Los Angeles in spring 2027.</p>
+      </div>
+      <div><h5>Visit</h5><a href="https://maps.google.com/?q=223+Mott+St+New+York+NY+10012" target="_blank" rel="noopener">223 Mott St<br>New York, NY 10012</a></div>
+      <div><h5>Contact</h5><a href="tel:+16469570489">(646) 957-0489</a><a href="mailto:ringram.ny@gmail.com">ringram.ny@gmail.com</a><a href="https://www.instagram.com/ringram_ny/" target="_blank" rel="noopener">Instagram @ringram_ny</a></div>
+      <div><h5>Explore</h5><a href="#experiences" data-link>Experiences</a><a href="#design" data-link>Design your ring</a><a href="#guide" data-link>Metal guide</a><a href="#stories" data-link>Stories</a></div>
+    </div>
+    <div class="bottom"><span>© 2026 ringram. All rights reserved.</span><span>Concept site by Virtual Media Hive</span></div>
+  </div>
+</footer>
+
+<div id="cursor"><svg viewBox="0 0 60 60" id="cursorSvg"></svg></div>
+<div id="dot"></div>
+<a id="scrollRing" href="#" aria-label="Back to top"><svg viewBox="0 0 100 100" id="srSvg"></svg><span class="lbl">scroll</span></a>
+
+<script>
+/* ============ DATA ============ */
+const IMG = h => `https://items-images-production.s3.us-west-2.amazonaws.com/files/${h}/original.png`;
+const BOOK = 'https://booking.ringram1929.com/reservation/course';
+const STUDIO_EMAIL = 'ringram.ny@gmail.com';
+
+const COURSES = [
+  {id:'gold',name:'Personalized Ring · Gold / Platinum',img:IMG('016bb15df2dc5d56352b4af74e397702066e469d'),time:'2 hours',people:'1–2 people',price:'$220–$2,400',desc:'Our most popular experience. Make a ring in 10K, 14K or 18K yellow, white or pink gold, or Pt950 platinum, from 1.0 to 5mm wide.',tag:'Most popular'},
+  {id:'decide',name:'Personalized Ring · Decide with an artisan',img:IMG('382b4b57cb406462300ae7ac4e160098febd8390'),time:'1.5–2 hours',people:'1–2 people',price:'Consult in-store',desc:"Can't choose between gold, platinum and silver? An artisan walks you through the differences in metal, karat, value and price, then you make it."},
+  {id:'anniv',name:'Anniversary Ring · Gold / Platinum',img:IMG('eaf3200600600824e3b6a98320f634c2a6511c0d'),time:'2 hours',people:'1–2 people',price:'$220–$2,400',desc:'Anniversaries, birthdays, any celebration. Craft a memory for your special day, with a little gift from us.'},
+  {id:'silver',name:'Personalized Ring · Sterling Silver',img:IMG('e41517c07bf8dd126c8e18da55479f2184a4886e'),time:'1 hour',people:'1–2 people',price:'$90–$250',desc:'Flat price per ring, using cast rings from Japan for more design choices, from 1.5mm bands to 10mm statement rings and signets.'},
+  {id:'wedgold',name:'Wedding Bands · Gold / Platinum',img:IMG('e6c1e8b36fdb9eaddefbb8b4084550fd9151b750'),time:'2 hours',people:'2 people',price:'$194–$2,400',desc:"Make each other's wedding bands by hand: 10K, 14K, 18K or platinum, from 1.0 to 5mm."},
+  {id:'wedsilver',name:'Wedding Bands · Sterling Silver',img:IMG('61661efd0d80a55cc966e88edd6ae1f2f04884c0'),time:'1 hour',people:'2 people',price:'$90–$250',desc:'Sterling silver wedding bands at a flat price per ring, in widths from 1.5 to 10mm.'},
+  {id:'designring',name:'Design Ring Consultation',img:IMG('17e2bb34c71c2e33d98f57c87a656a8cdc7ad63d'),time:'1 hour',people:'Consultation',price:'Custom quote',desc:'For heirlooms and one-of-a-kind pieces. Designed with our artisans in NY, then made by master jewelers in Japan.'}
+];
+
+const OCCASIONS = [
+  {id:'engagement',name:'Getting engaged',ic:'the question',desc:'Make the ring you propose with, or make promise rings together.',course:'gold'},
+  {id:'wedding',name:'Getting married',ic:'the vows',desc:"Make each other's wedding bands and wear the day forever.",course:'wedgold'},
+  {id:'anniversary',name:'Anniversaries',ic:'the years',desc:'A new ring for the other hand, marking the chapter you are in.',course:'anniv'},
+  {id:'birthday',name:'Birthdays',ic:'the gift',desc:'Add their birthstone and engrave the date. Better than a gift card.',course:'anniv'},
+  {id:'date',name:'Date night',ic:'the plan',desc:'Something new to do together in NYC, and you both go home with a ring.',course:'silver'},
+  {id:'tribute',name:'Tributes & keepsakes',ic:'the memory',desc:'Engrave a pet, handwriting or a drawing to keep someone close.',course:'silver'},
+  {id:'family',name:'Family & friends',ic:'the bond',desc:'Parents, kids, sisters, best friends. Matching rings, made together.',course:'silver'},
+  {id:'travel',name:'An NYC souvenir',ic:'the trip',desc:"A New York memory you actually wear. Visitors' favorite stop in SoHo.",course:'silver'}
+];
+
+// Instagram reels (embedded from @ringram_ny and the customers who posted them)
+// Ringram's own reels, self-hosted: media/story-N.mp4 = silent preview loop, media/full-N.mp4 = full reel with sound
+const REELS = [
+  {n:0,code:'DfgG1XAp-86',cap:"You don't just pick out a ring, you make it"},
+  {n:1,code:'DfYNzrth8Gj',cap:'A ring & the story · 18 years together'},
+  {n:2,code:'Dd9-jEqB1MK',cap:'A ring & the story · their wedding bands'},
+  {n:3,code:'DduRL8Zh3TM',cap:'A ring & the story · father & son'},
+  {n:4,code:'DeiCRlShAIU',cap:'A ring & the story · best friends'},
+  {n:5,code:'DfGFbWph7Dj',cap:'A ring & the story · a birthday & anniversary'},
+  {n:6,code:'DeQEIFJBLBH',cap:'A ring & the story · made for each other'},
+  {n:7,code:'De0D2Cch0aG',cap:'A ring & the story · a tribute'}
+];
+const LOCAL = Object.fromEntries(REELS.map(r=>[r.code,r.n]));
+const vidTile = (n,label='Tap for sound') => `<div class="vid" data-play="${n}"><video src="media/story-${n}.mp4" poster="media/story-${n}.jpg" muted loop playsinline autoplay preload="metadata"></video><span class="pbtn"></span><span class="sound">${label}</span></div>`;
+
+const STORIES = [
+  {cat:'Anniversary',code:'DfYNzrth8Gj',by:'ringram_ny',title:'18 years together, a ring for the other hand',text:'Six years married and still finding new ways to celebrate. They already wear their wedding bands, so this new pair went on the other hand as a daily reminder of each other.'},
+  {cat:'Wedding',code:'Dd9-jEqB1MK',by:'ringram_ny',title:'Wedding rings they made together',text:"For them, the bands weren't only about what they'd wear for a lifetime. Making them side by side became part of the wedding story too."},
+  {cat:'Tribute',code:'DfIH4rsh4X4',by:'ringram_ny',title:'A ring with her dog on it',text:'She came in with a drawing of the dog she had lost and had it engraved onto her ring. Her reaction when she first held it said everything about how much a small piece of jewelry can hold.'},
+  {cat:'Family',code:'DduRL8Zh3TM',by:'ringram_ny',title:'A father and son afternoon',text:'A day at the studio turned into more than ring-making. It was time to slow down, make something together and share a few laughs.'},
+  {cat:'Date',code:'DfitbrrsWI-',by:'anaaaradosavljevic',quote:'The perfect fall date idea in NYC',title:'"husby loves you ♡"',text:'They took the silver workshop and made rings for each other. She got a dainty band with a sweet engraving, and he got a chunky signet with her initial.'},
+  {cat:'Anniversary',code:'DfGFbWph7Dj',by:'ringram_ny',title:'A birthday and an anniversary in one visit',text:"They came to celebrate a birthday and an upcoming anniversary, and they're already planning the next ring for the next chapter."},
+  {cat:'Family',code:'DdM2nWsvCnJ',by:'alice_odessa',quote:'A New York experience you actually get to keep.',title:'Rings from scratch, with mom',text:'A mother and daughter made each other rings, stretched them to size and engraved them together.'},
+  {cat:'Date',code:'DdEwGPPAYLT',by:'aiyanafig',quote:'Such a cute date night idea in NYC!',title:'Something a little different',text:'A SoHo date that skipped the usual dinner and drinks, and they recommend it for anniversaries, girls\' days or a visit to the city.'},
+  {cat:'Travel',code:'DfDF3hMBUB9',by:'rachel.a.molina',quote:'Every trip to NYC is an opportunity to make new memories',title:'A souvenir you wear home',text:'On a trip to New York, making their own rings became the memory of the visit.'},
+  {cat:'Date',code:'DdZmY_gvUGo',by:'amirsouki1',quote:'Made our own rings from scratch',title:'A fun NYC date',text:'From raw band to finished ring in one afternoon on Mott Street.'},
+  {cat:'Anniversary',code:'DctWhItugt9',by:'crystal.t25',quote:'highly recommend this for a milestone in your marriage',title:'For the milestones',text:'A special afternoon she now recommends for any marriage milestone, or for anyone you love.'},
+  {cat:'Date',code:'DcjPQKPOCeL',by:'thesenseswefeel',quote:'A little story about love, hands, and a ring we made together.',title:'Love, hands and a ring',text:"They spent an afternoon at ringram's first U.S. studio making their rings by hand."},
+  {cat:'Travel',code:'DeaHlpVJO5K',by:'dialimr',quote:'Un recuerdo de Nueva York diseñado por ti',title:'Un recuerdo de Nueva York',text:'A Spanish-speaking visitor added her birthstone to make her New York souvenir even more personal.'},
+  {cat:'Date',code:'Deo338HxZ65',by:'parkedonbliss',quote:"Such a special and memorable experience making eachother's rings",title:"Making each other's rings",text:"Each made the other's ring, a gift you can only get by making it yourself."},
+  {cat:'Family',code:'DeiCRlShAIU',by:'ringram_ny',title:'Best friends, matching rings',text:'Two friends made rings side by side, a bond they can now wear every day.'},
+  {cat:'Date',code:'DeQEIFJBLBH',by:'ringram_ny',title:'Made for each other',text:'Two rings, two makers, one afternoon on Mott Street, and a story they get to keep.'},
+  {cat:'Tribute',code:'De0D2Cch0aG',by:'ringram_ny',title:'Some bonds stay with us forever',text:'A tribute to someone loved, a reminder of a memory, or a symbol of a bond. There are endless ways to make a ring that is only yours.'}
+];
+
+const METALS = {
+  k10:{label:'10K Gold',fam:'gold',k:10,pct:41.7},
+  k14:{label:'14K Gold',fam:'gold',k:14,pct:58.3},
+  k18:{label:'18K Gold',fam:'gold',k:18,pct:75},
+  pt:{label:'Platinum Pt950',fam:'pt',pct:95},
+  ag:{label:'Sterling Silver',fam:'ag',pct:92.5}
+};
+const TONES = {yellow:'Yellow',white:'White',pink:'Pink'};
+const PALETTES = {
+  yellow:['#6e5016','#b88c38','#f4dc9a','#fff6d8','#d9b25a','#8a6620'],
+  white:['#6b6d72','#a9abb0','#e8e9ec','#ffffff','#c4c6cb','#7d7f84'],
+  pink:['#7a3f30','#c07c64','#f0c2ad','#fff0e8','#d99a82','#8e4c3b'],
+  pt:['#5a5f66','#9aa1a9','#dfe4ea','#fbfdff','#b6bdc5','#6a7078'],
+  ag:['#5e5e5e','#a0a0a0','#e2e2e2','#fdfdfd','#bdbdbd','#707070']
+};
+const WIDTHS_GOLD=[1,1.5,2.5,3.5,5], WIDTHS_AG=[1.5,2.5,3.5,5,7,10];
+const WIDTH_ANALOGY = {
+  1:'About the thickness of a credit card, a delicate whisper of a band.',
+  1.5:'About as thick as a dime. Dainty and great for stacking.',
+  2.5:'About the height of a USB-C plug. Our classic everyday width.',
+  3.5:'The width of a headphone jack plug. Noticeable and confident.',
+  5:'About three quarters stacked. A bold, substantial band.',
+  7:'Roughly the width of a pencil. A statement ring.',
+  10:'About the width of a fingernail. Maximum presence.'
+};
+const CMP_OBJ = {1:'credit card edge',1.5:'a dime (side view)',2.5:'USB-C plug',3.5:'3.5mm headphone plug',5:'3 stacked quarters',7:'a pencil',10:'a fingernail'};
+const TEXTURES = {polished:'Mirror polish',matte:'Soft matte',hammered:'Hammered',brushed:'Brushed lines'};
+const STONES = [
+  {id:'none',name:'None',c:null},
+  {id:'jan',name:'Jan · Garnet',c:'#8b1e2b'},{id:'feb',name:'Feb · Amethyst',c:'#8e5bb5'},{id:'mar',name:'Mar · Aquamarine',c:'#7fd3e0'},
+  {id:'apr',name:'Apr · Diamond',c:'#f4f9ff'},{id:'may',name:'May · Emerald',c:'#1f9d63'},{id:'jun',name:'Jun · Pearl',c:'#f3ece0'},
+  {id:'jul',name:'Jul · Ruby',c:'#c2102a'},{id:'aug',name:'Aug · Peridot',c:'#9bc43a'},{id:'sep',name:'Sep · Sapphire',c:'#1f4fb5'},
+  {id:'oct',name:'Oct · Pink tourmaline',c:'#e88fb0'},{id:'nov',name:'Nov · Citrine',c:'#e89a1c'},{id:'dec',name:'Dec · Blue topaz',c:'#4a8fd8'}
+];
+const RANGES = { // published ranges per ring
+  personal:{k10:[220,1400],k14:[550,2200],k18:[730,3200],pt:[630,2600]},
+  wedding:{k10:[194,1400],k14:[436,2200],k18:[563,3200],pt:[491,2600]}
+};
+const AG_PRICE = {1.5:90,2.5:90,3.5:135,5:165,7:210,10:250};
+
+/* ============ RING RENDERER ============ */
+let uid=0;
+function ringSVG(cfg, o={}){
+  const id='r'+(uid++);
+  const cx=o.cx??200, cy=o.cy??185, k=o.tilt??0.36, s=o.scale??10.5;
+  const pal = cfg.metal==='pt'?PALETTES.pt: cfg.metal==='ag'?PALETTES.ag: PALETTES[cfg.tone||'yellow'];
+  const D = 11.63 + 0.8128*cfg.size;           // inner diameter mm
+  const Ri = D*s/2, t = Math.max(1.5, cfg.width>=7?2:1.6)*s, Ro = Ri + t;
+  const h = cfg.width*s;
+  const yT = cy - h/2, yB = cy + h/2;
+  const E=(r,y,sweep,from,to)=>`A ${r} ${r*k} 0 0 ${sweep} ${to} ${y}`;
+  const matte = cfg.texture==='matte', ham = cfg.texture==='hammered', brush=cfg.texture==='brushed';
+  let g = `<defs>
+   <linearGradient id="${id}h" x1="0" x2="1">
+     <stop offset="0" stop-color="${pal[0]}"/><stop offset=".18" stop-color="${pal[1]}"/><stop offset=".38" stop-color="${matte?pal[2]:pal[3]}"/>
+     <stop offset=".5" stop-color="${pal[2]}"/><stop offset=".7" stop-color="${pal[4]}"/><stop offset=".86" stop-color="${matte?pal[4]:pal[3]}"/><stop offset="1" stop-color="${pal[5]}"/></linearGradient>
+   <linearGradient id="${id}v" x1="0" y1="0" x2="0" y2="1">
+     <stop offset="0" stop-color="#fff" stop-opacity="${cfg.profile==='round'?.55:.35}"/><stop offset="${cfg.profile==='round'?.35:.12}" stop-color="#fff" stop-opacity="0"/>
+     <stop offset="${cfg.profile==='round'?.7:.88}" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="${cfg.profile==='round'?.35:.22}"/></linearGradient>
+   <linearGradient id="${id}in" x1="0" x2="1"><stop offset="0" stop-color="${pal[4]}"/><stop offset=".5" stop-color="${pal[0]}"/><stop offset="1" stop-color="${pal[4]}"/></linearGradient>
+   <linearGradient id="${id}rim" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="${pal[3]}"/><stop offset=".5" stop-color="${pal[2]}"/><stop offset="1" stop-color="${pal[1]}"/></linearGradient>
+   <clipPath id="${id}hole"><ellipse cx="${cx}" cy="${yT}" rx="${Ri}" ry="${Ri*k}"/></clipPath>
+   <clipPath id="${id}front"><path d="M ${cx-Ro} ${yT} A ${Ro} ${Ro*k} 0 0 0 ${cx+Ro} ${yT} L ${cx+Ro} ${yB} A ${Ro} ${Ro*k} 0 0 1 ${cx-Ro} ${yB} Z"/></clipPath>
+   <path id="${id}eng" d="M ${cx-Ri*0.92} ${yT+h*0.62} A ${Ri*0.92} ${Ri*0.92*k} 0 0 1 ${cx+Ri*0.92} ${yT+h*0.62}"/>
+   <filter id="${id}n"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .5 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+   <radialGradient id="${id}sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+  </defs>`;
+  // shadow
+  if(!o.noShadow) g += `<ellipse cx="${cx}" cy="${yB+Ro*k+14}" rx="${Ro*1.05}" ry="${Ro*k*0.45}" fill="url(#${id}sh)"/>`;
+  // inner back wall (visible through hole)
+  g += `<g clip-path="url(#${id}hole)"><path d="M ${cx-Ri} ${yT} A ${Ri} ${Ri*k} 0 0 1 ${cx+Ri} ${yT} L ${cx+Ri} ${yT+h} A ${Ri} ${Ri*k} 0 0 0 ${cx-Ri} ${yT+h} Z" fill="url(#${id}in)"/>`;
+  if(cfg.engraving){
+    const fs = Math.max(6, Math.min(h*0.42, 17));
+    g += `<text font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="${fs}" fill="${pal[0]}" fill-opacity=".85" letter-spacing="1"><textPath href="#${id}eng" startOffset="50%" text-anchor="middle">${esc(cfg.engraving)}</textPath></text>`;
+  }
+  g += `</g>`;
+  // top rim
+  g += `<path fill-rule="evenodd" fill="url(#${id}rim)" d="M ${cx-Ro} ${yT} a ${Ro} ${Ro*k} 0 1 0 ${2*Ro} 0 a ${Ro} ${Ro*k} 0 1 0 ${-2*Ro} 0 Z M ${cx-Ri} ${yT} a ${Ri} ${Ri*k} 0 1 0 ${2*Ri} 0 a ${Ri} ${Ri*k} 0 1 0 ${-2*Ri} 0 Z"/>`;
+  // front outer surface
+  g += `<g clip-path="url(#${id}front)"><rect x="${cx-Ro}" y="${yT-Ro}" width="${2*Ro}" height="${h+2*Ro}" fill="url(#${id}h)"/>
+        <path d="M ${cx-Ro} ${yT} A ${Ro} ${Ro*k} 0 0 0 ${cx+Ro} ${yT} L ${cx+Ro} ${yB} A ${Ro} ${Ro*k} 0 0 1 ${cx-Ro} ${yB} Z" fill="url(#${id}v)"/>`;
+  if(ham){ let d=''; let seed=7; const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
+    for(let i=0;i<150;i++){const x=cx-Ro+rnd()*2*Ro, y=yT+rnd()*(h+Ro*k*2); const r=4+rnd()*7; d+=`<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r*0.6}" fill="${rnd()>.5?'#fff':'#000'}" opacity="${.08+rnd()*.14}"/>`;} g+=d; }
+  if(brush){ for(let y=yT-Ro;y<yB+Ro;y+=2.2) g+=`<line x1="${cx-Ro}" x2="${cx+Ro}" y1="${y}" y2="${y+Ro*0.25}" stroke="${(y|0)%3?'#fff':'#000'}" stroke-opacity=".1" stroke-width=".8"/>`; }
+  if(matte) g += `<rect x="${cx-Ro}" y="${yT-Ro}" width="${2*Ro}" height="${h+2*Ro}" filter="url(#${id}n)" fill="#000" opacity=".5"/>`;
+  if(!matte && !ham) g += `<rect x="${cx-Ro*0.62}" y="${yT-Ro}" width="${Ro*0.09}" height="${h+2*Ro}" fill="#fff" opacity=".55"/>`;
+  g += `</g>`;
+  // edge highlight
+  g += `<path d="M ${cx-Ro} ${yT} A ${Ro} ${Ro*k} 0 0 0 ${cx+Ro} ${yT}" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.2"/>`;
+  g += `<path d="M ${cx-Ri} ${yT} A ${Ri} ${Ri*k} 0 0 1 ${cx+Ri} ${yT}" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="1"/>`;
+
+  // signet plate
+  let stoneX=cx, stoneY=yT+Ro*k+h/2, stoneR=Math.max(5, 0.9*s);
+  if(cfg.profile==='signet'){
+    const big = cfg.signetSize==='large';
+    const pw = (big?12:9.5)*s, ph=(cfg.signetShape==='rect'? pw*0.7: pw);
+    const pcx=cx, pcy=yT+((Ri+Ro)/2)*k + 2, thick=Math.max(h*0.55,1.6*s);
+    const shape=(y,fill,extra='')=>{
+      if(cfg.signetShape==='round') return `<ellipse cx="${pcx}" cy="${y}" rx="${pw/2}" ry="${ph/2*k*1.25}" fill="${fill}" ${extra}/>`;
+      const rr = cfg.signetShape==='square'?pw*0.18:pw*0.12;
+      return `<rect x="${pcx-pw/2}" y="${y-ph/2*k*1.25}" width="${pw}" height="${ph*k*1.25}" rx="${rr}" ry="${rr*k*1.25}" fill="${fill}" ${extra}/>`;
+    };
+    g += shape(pcy+thick, `url(#${id}h)`) + `<rect x="${pcx-pw/2}" y="${pcy}" width="${pw}" height="${thick}" fill="url(#${id}h)"/>` + shape(pcy, `url(#${id}rim)`, `stroke="#fff" stroke-opacity=".6"`);
+    if(cfg.initials) g += `<text x="${pcx}" y="${pcy+ph*k*0.22}" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="${ph*0.42}" transform="translate(0 ${pcy*(1-0.62)}) scale(1 .62)" fill="${pal[0]}" fill-opacity=".75" font-style="italic">${esc(cfg.initials.toUpperCase())}</text>`;
+    stoneX=pcx; stoneY=pcy - (cfg.initials? ph*k*0.3 : 0); stoneR=Math.max(5,0.9*s);
+  }
+  // stone
+  const st = STONES.find(x=>x.id===cfg.stone);
+  if(st && st.c){
+    const sid=id+'s';
+    g += `<defs><radialGradient id="${sid}" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#fff"/><stop offset=".25" stop-color="${st.c}"/><stop offset="1" stop-color="${shade(st.c,-0.45)}"/></radialGradient></defs>`;
+    if(cfg.setting==='petal'){
+      for(let i=0;i<5;i++){const a=i*72-90; const px=stoneX+Math.cos(a*Math.PI/180)*stoneR*1.55, py=stoneY+Math.sin(a*Math.PI/180)*stoneR*1.55*0.75;
+        g+=`<ellipse cx="${px}" cy="${py}" rx="${stoneR*0.95}" ry="${stoneR*0.62}" transform="rotate(${a+90} ${px} ${py})" fill="url(#${id}rim)" stroke="${pal[0]}" stroke-opacity=".35" stroke-width=".8"/>`;}
+    } else {
+      g += `<ellipse cx="${stoneX}" cy="${stoneY}" rx="${stoneR*1.32}" ry="${stoneR*1.15}" fill="url(#${id}rim)" stroke="${pal[0]}" stroke-opacity=".4"/>`;
+    }
+    g += `<ellipse cx="${stoneX}" cy="${stoneY}" rx="${stoneR}" ry="${stoneR*0.86}" fill="url(#${sid})"/>`;
+    g += `<path d="M ${stoneX-stoneR*0.35} ${stoneY-stoneR*0.35} l ${stoneR*0.12} ${stoneR*0.35} l ${stoneR*0.35} ${stoneR*0.1} l -${stoneR*0.35} ${stoneR*0.1} l -${stoneR*0.12} ${stoneR*0.35} l -${stoneR*0.12} -${stoneR*0.35} l -${stoneR*0.35} -${stoneR*0.1} l ${stoneR*0.35} -${stoneR*0.1} z" fill="#fff" opacity=".9"><animate attributeName="opacity" values=".2;1;.2" dur="2.4s" repeatCount="indefinite"/></path>`;
+  }
+  return g;
+}
+function shade(hex,p){const n=parseInt(hex.slice(1),16);let r=n>>16,g=(n>>8)&255,b=n&255;const f=v=>Math.round(Math.min(255,Math.max(0,v+(p<0?v*p:(255-v)*p))));return '#'+[f(r),f(g),f(b)].map(v=>v.toString(16).padStart(2,'0')).join('')}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+/* ============ STATE ============ */
+const baseRing = ()=>({metal:'k14',tone:'yellow',width:2.5,size:7,profile:'flat',signetShape:'round',signetSize:'small',texture:'polished',stone:'none',setting:'bezel',engraving:'',initials:''});
+const state = {count:1, edit:0, occasion:'anniversary', rings:[baseRing(), {...baseRing(), tone:'white', width:3.5, size:9.5}], tiltK:0.36, rot:0};
+const R = ()=>state.rings[state.edit];
+
+/* ============ ROUTER ============ */
+const pages=['home','experiences','design','guide','stories'];
+function route(){
+  const h=(location.hash||'#home').slice(1).split('?')[0];
+  const p=pages.includes(h)?h:'home';
+  document.querySelectorAll('.page').forEach(el=>el.classList.toggle('on',el.id==='page-'+p));
+  document.querySelectorAll('.links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+p));
+  document.getElementById('links').classList.remove('open');
+  window.scrollTo({top:0,behavior:'instant'});
+  if(p==='design') renderDesigner();
+  if(p==='stories') renderStories();
+  if(p==='guide') renderGuide();
+  observeReveals();
+}
+window.addEventListener('hashchange',route);
+document.getElementById('menuBtn').onclick=()=>document.getElementById('links').classList.toggle('open');
+
+/* ============ HOME ============ */
+function initHome(){
+  // hero title word animation
+  const ht=document.getElementById('heroTitle');
+  let i=0; ht.innerHTML = ht.innerHTML.replace(/(<em>|<\/em>)|([^\s<]+)/g,(m,tag,w)=> tag? tag : `<span class="w" style="animation-delay:${0.15+0.09*(i++)}s">${w}</span>`);
+  const words=['Engagements','✦','Wedding bands','✦','Anniversaries','✦','Birthdays','✦','Date night in SoHo','✦','Tributes','✦','Best friends','✦','Mother & daughter','✦'];
+  document.getElementById('mq').innerHTML = [...words,...words].map(w=>`<span>${w}</span>`).join('');
+  document.getElementById('pfGrid').innerHTML = OCCASIONS.map(o=>`<a class="pf" href="#design" data-occ="${o.id}"><div class="ic">for ${o.ic}</div><div><h3>${o.name}</h3><p>${o.desc}</p><div class="go">Design for this →</div></div></a>`).join('');
+  document.querySelectorAll('.pf').forEach(a=>a.addEventListener('click',()=>{ setOccasion(a.dataset.occ); }));
+  document.getElementById('reelStrip').innerHTML = REELS.map(r=>`<div class="reel">${vidTile(r.n)}<div class="cap"><b>@ringram_ny</b> · ${r.cap}</div></div>`).join('');
+  const courseCard = c=>`<div class="course"><div class="img" style="background-image:url('${c.img}')"></div><div class="body"><div class="meta">${c.time} · ${c.people}</div><h3>${c.name}</h3><p>${c.desc}</p><div class="row"><span class="price">${c.price}</span><a href="#design" data-course="${c.id}">Request →</a></div></div></div>`;
+  document.getElementById('courseTeaser').innerHTML = [COURSES[0],COURSES[4],COURSES[3]].map(courseCard).join('');
+  document.getElementById('courseAll').innerHTML = COURSES.map(courseCard).join('');
+  document.querySelectorAll('[data-course]').forEach(a=>a.addEventListener('click',()=>{pendingCourse=a.dataset.course}));
+  const qs = STORIES.filter(s=>s.quote).slice(0,3);
+  document.getElementById('quoteStrip').innerHTML = qs.map(s=>`<div class="q"><blockquote>"${s.quote}"</blockquote><cite>@${s.by} · ${s.cat}</cite></div>`).join('');
+  document.getElementById('ctaRing').innerHTML = ringSVG({...baseRing(),metal:'k18',tone:'yellow',width:3.5,size:6,stone:'nov',setting:'petal',engraving:'every ring tells a story'},{tilt:0.42});
+  document.getElementById('ctaRing2').innerHTML = ringSVG({...baseRing(),metal:'pt',width:5,size:8,texture:'hammered',engraving:'what\'s yours?'},{tilt:0.42});
+}
+function scrollReels(d){const s=document.getElementById('reelStrip'); s.scrollBy({left:d*350,behavior:'smooth'})}
+let pendingCourse=null;
+
+/* ============ DESIGNER ============ */
+function opt(label,on,attrs='',dis=false){return `<button type="button" class="opt ${on?'on':''}" ${attrs} ${dis?'disabled':''}>${label}</button>`}
+function setOccasion(id){
+  state.occasion=id; const o=OCCASIONS.find(x=>x.id===id);
+  if(id==='wedding'||id==='engagement'){state.count=2}
+  if(o) pendingCourse = (id==='wedding' && ['ag'].includes(state.rings[0].metal))?'wedsilver':o.course;
+}
+function renderDesigner(){
+  const r=R();
+  const isAg=r.metal==='ag';
+  document.getElementById('occOpts').innerHTML = OCCASIONS.map(o=>opt(o.name,state.occasion===o.id,`data-occ="${o.id}"`)).join('');
+  document.getElementById('occLbl').textContent='';
+  document.getElementById('metalOpts').innerHTML = Object.entries(METALS).map(([k,m])=>opt(`<span class="swatch" style="background:${swatchFor(k,r.tone)}"></span>${m.label}`,r.metal===k,`data-metal="${k}"`)).join('');
+  document.getElementById('toneOpts').innerHTML = METALS[r.metal].fam==='gold' ? Object.entries(TONES).map(([k,v])=>opt(`<span class="swatch" style="background:${PALETTES[k][2]}"></span>${v} gold`,r.tone===k,`data-tone="${k}"`)).join('') : '';
+  document.getElementById('metalLbl').textContent = METALS[r.metal].fam==='gold'?`${TONES[r.tone]} · ${METALS[r.metal].pct}% pure gold`:`${METALS[r.metal].pct}% pure`;
+  const profs={flat:'Flat band',round:'Rounded (comfort)',signet:'Signet'};
+  document.getElementById('profOpts').innerHTML = Object.entries(profs).map(([k,v])=>opt(v,r.profile===k,`data-prof="${k}"`)).join('');
+  document.getElementById('signetOpts').innerHTML = r.profile==='signet' ? ['round','square','rect'].map(s=>opt({round:'Round face',square:'Square face',rect:'Rectangle face'}[s],r.signetShape===s,`data-sshape="${s}"`)).join('') + ['small','large'].map(s=>opt(s[0].toUpperCase()+s.slice(1),r.signetSize===s,`data-ssize="${s}"`)).join('') : '';
+  document.getElementById('initField').style.display = r.profile==='signet'?'flex':'none';
+  const widths = isAg?WIDTHS_AG:WIDTHS_GOLD;
+  if(!widths.includes(r.width)) r.width=2.5;
+  if(r.width===1 && r.metal!=='k10') r.width=1.5;
+  document.getElementById('widthOpts').innerHTML = widths.map(w=>opt(w.toFixed(1)+'mm',r.width===w,`data-width="${w}"`, w===1&&r.metal!=='k10')).join('');
+  document.getElementById('widthLbl').textContent = r.width===1&&r.metal!=='k10'?'':(isAg?'':'1.0mm available in 10K only');
+  document.getElementById('widthAnalogy').textContent = WIDTH_ANALOGY[r.width];
+  document.getElementById('sizeRange').value=r.size; document.getElementById('sizeLbl').textContent='Size '+r.size;
+  document.getElementById('texOpts').innerHTML = Object.entries(TEXTURES).map(([k,v])=>opt(v,r.texture===k,`data-tex="${k}"`)).join('');
+  document.getElementById('stoneOpts').innerHTML = STONES.map(s=>`<button type="button" class="stonebtn ${r.stone===s.id?'on':''}" data-stone="${s.id}" title="${s.name}">${s.c?`<span style="background:radial-gradient(circle at 35% 30%,#fff,${s.c} 35%,${shade(s.c,-.45)})"></span>`:'<span style="border:1px dashed #999"></span>'}<em>${s.id==='none'?'none':s.name.split(' · ')[0]}</em></button>`).join('');
+  const st=STONES.find(s=>s.id===r.stone);
+  document.getElementById('stoneLbl').textContent = st.c? st.name.split(' · ')[1] : 'optional';
+  document.getElementById('settingOpts').innerHTML = st.c ? opt('Classic bezel',r.setting==='bezel','data-set="bezel"')+opt('Flower petal setting ✿ new',r.setting==='petal','data-set="petal"') : '';
+  document.getElementById('engr').value=r.engraving; document.getElementById('initials').value=r.initials;
+  // tabs
+  document.querySelectorAll('#countTabs button').forEach(b=>b.classList.toggle('on',+b.dataset.count===state.count));
+  document.getElementById('editTabs').style.display = state.count===2?'flex':'none';
+  document.querySelectorAll('#editTabs button').forEach(b=>b.classList.toggle('on',+b.dataset.edit===state.edit));
+  // course select
+  const cs=document.getElementById('courseSel');
+  if(!cs.options.length) cs.innerHTML = COURSES.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
+  cs.value = pendingCourse || suggestCourse();
+  drawStage(); renderSpec();
+}
+function suggestCourse(){
+  const r=state.rings[0]; const ag=r.metal==='ag';
+  if(state.occasion==='wedding') return ag?'wedsilver':'wedgold';
+  if(state.occasion==='anniversary'||state.occasion==='birthday') return ag?'silver':'anniv';
+  return ag?'silver':'gold';
+}
+function swatchFor(k,tone){return k==='pt'?PALETTES.pt[2]:k==='ag'?PALETTES.ag[2]:PALETTES[tone][2]}
+function drawStage(){
+  const svg=document.getElementById('mainRing');
+  if(state.count===1){
+    svg.setAttribute('viewBox','0 0 400 360');
+    svg.innerHTML = `<g transform="rotate(${state.rot} 200 185)">${ringSVG(state.rings[0],{tilt:state.tiltK})}</g>`;
+  } else {
+    svg.setAttribute('viewBox','0 0 520 360');
+    const a=ringSVG(state.rings[0],{cx:175,cy:170,tilt:state.tiltK,scale:8.4}), b=ringSVG(state.rings[1],{cx:345,cy:200,tilt:state.tiltK,scale:8.4});
+    svg.innerHTML = `<g transform="rotate(${state.rot} 260 185)"><g opacity="${state.edit===0?1:.75}">${a}</g><g opacity="${state.edit===1?1:.75}">${b}</g></g>`;
+  }
+}
+function priceFor(r){
+  if(r.metal==='ag'){
+    if(r.profile==='signet') return {v:r.signetSize==='large'?165:135, exact:true};
+    return {v:AG_PRICE[r.width], exact:true};
+  }
+  const table = state.occasion==='wedding'?RANGES.wedding:RANGES.personal;
+  const [mn,mx]=table[r.metal];
+  const wf=(r.width-1)/4, sf=(r.size-3)/10;
+  const f=Math.min(1,Math.max(0,0.82*wf+0.18*sf));
+  return {v:Math.round((mn+(mx-mn)*Math.pow(f,1.5))/10)*10, exact:false, range:[mn,mx]};
+}
+function renderSpec(){
+  const rings=state.rings.slice(0,state.count);
+  const r=R();
+  document.getElementById('spec').innerHTML = `
+    <div><small>Metal</small><b>${METALS[r.metal].fam==='gold'?r.metal.replace('k','')+'K '+TONES[r.tone]:METALS[r.metal].label}</b></div>
+    <div><small>Width · Size</small><b>${r.width}mm · ${r.size}</b></div>
+    <div><small>Finish</small><b>${TEXTURES[r.texture]}</b></div>`;
+  const ps=rings.map(priceFor); const total=ps.reduce((a,p)=>a+p.v,0);
+  const allExact=ps.every(p=>p.exact);
+  document.getElementById('estBig').textContent = (allExact?'':'≈ ')+'$'+total.toLocaleString();
+  const extras = rings.some(x=>x.stone!=='none')?' Birthstones are quoted by the studio.':'';
+  document.getElementById('estNote').textContent = allExact? `Sterling silver flat price${state.count>1?', 2 rings':''}.${extras}` : `Estimate from ringram's published price ranges${state.count>1?' for 2 rings':''}. Final price depends on exact size and metal weight.${extras}${rings.some(x=>x.profile==='signet'&&x.metal!=='ag')?' Gold signets are quoted in-studio.':''}`;
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button,[data-occ]'); if(!b) return;
+  const r=R(); let hit=true;
+  if(b.dataset.occ && b.closest('#occOpts')) setOccasion(b.dataset.occ);
+  else if(b.dataset.metal){ r.metal=b.dataset.metal; pendingCourse=null; }
+  else if(b.dataset.tone) r.tone=b.dataset.tone;
+  else if(b.dataset.prof) r.profile=b.dataset.prof;
+  else if(b.dataset.sshape) r.signetShape=b.dataset.sshape;
+  else if(b.dataset.ssize) r.signetSize=b.dataset.ssize;
+  else if(b.dataset.width) r.width=+b.dataset.width;
+  else if(b.dataset.tex) r.texture=b.dataset.tex;
+  else if(b.dataset.stone) r.stone=b.dataset.stone;
+  else if(b.dataset.set) r.setting=b.dataset.set;
+  else if(b.dataset.count){ state.count=+b.dataset.count; if(state.count===1) state.edit=0; }
+  else if(b.dataset.edit) state.edit=+b.dataset.edit;
+  else hit=false;
+  if(hit && document.getElementById('page-design').classList.contains('on')) renderDesigner();
+});
+document.getElementById('sizeRange').addEventListener('input',e=>{R().size=+e.target.value;document.getElementById('sizeLbl').textContent='Size '+R().size;drawStage();renderSpec()});
+document.getElementById('engr').addEventListener('input',e=>{R().engraving=e.target.value;drawStage()});
+document.getElementById('initials').addEventListener('input',e=>{R().initials=e.target.value;drawStage()});
+document.getElementById('courseSel').addEventListener('change',e=>{pendingCourse=e.target.value});
+// drag to tilt / rotate
+(function(){
+  const svg=document.getElementById('mainRing'); let drag=null;
+  svg.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,k:state.tiltK,r:state.rot};svg.setPointerCapture(e.pointerId)});
+  svg.addEventListener('pointermove',e=>{if(!drag)return; state.tiltK=Math.min(.78,Math.max(.14,drag.k+(e.clientY-drag.y)/400)); state.rot=Math.max(-28,Math.min(28,drag.r+(e.clientX-drag.x)/8)); drawStage()});
+  const end=()=>{drag=null}; svg.addEventListener('pointerup',end); svg.addEventListener('pointercancel',end);
+})();
+
+/* ============ FORM ============ */
+let lastMail='';
+function designSummary(){
+  return state.rings.slice(0,state.count).map((r,i)=>{
+    const st=STONES.find(s=>s.id===r.stone); const p=priceFor(r);
+    return [`RING ${i+1}`,
+      `  Metal: ${METALS[r.metal].fam==='gold'?r.metal.replace('k','')+'K '+TONES[r.tone]+' Gold':METALS[r.metal].label}`,
+      `  Style: ${r.profile==='signet'?`Signet (${r.signetShape} face, ${r.signetSize})`:r.profile==='round'?'Rounded comfort band':'Flat band'}`,
+      `  Width: ${r.width}mm   Size (US): ${r.size}`,
+      `  Finish: ${TEXTURES[r.texture]}`,
+      `  Birthstone: ${st.c?st.name+(r.setting==='petal'?' in flower petal setting':' in bezel setting'):'None'}`,
+      `  Inside engraving: ${r.engraving||'(none)'}`,
+      r.profile==='signet'?`  Signet initials: ${r.initials||'(none)'}`:'',
+      `  Estimate: ${p.exact?'':'~'}$${p.v}`
+    ].filter(Boolean).join('\n');
+  }).join('\n\n');
+}
+document.getElementById('reqForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=new FormData(e.target); const err=document.getElementById('formErr');
+  if(!f.get('name')||!/^\S+@\S+\.\S+$/.test(f.get('email')||'')){err.textContent='Please add your name and a valid email.';return}
+  err.textContent='';
+  const course=COURSES.find(c=>c.id===f.get('course'));
+  const occ=OCCASIONS.find(o=>o.id===state.occasion);
+  const body =
+`Hi ringram team,
+
+I'd like to request a ring-making appointment. My ring design is below.
+
+Name: ${f.get('name')}${f.get('guest')?`\nGuest: ${f.get('guest')}`:''}
+Email: ${f.get('email')}
+Phone: ${f.get('phone')||'-'}
+Occasion: ${occ?occ.name:'-'}
+Experience: ${course.name}
+Preferred date: ${f.get('date')||'Flexible'} (${f.get('time')})
+Surprise: ${f.get('surprise')}
+Drawing engraving ("ring tattoo"): ${document.getElementById('drawing').checked?'Yes, I will send my drawing':'No'}
+
+--- MY DESIGN ---
+${designSummary()}
+
+Estimated total: ${document.getElementById('estBig').textContent}
+
+Our story:
+${f.get('story')||'-'}
+
+Sent from the ringram design studio`;
+  lastMail = `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(`Ring design request: ${f.get('name')} (${occ?occ.name:'ringram'})`)}&body=${encodeURIComponent(body)}`;
+  document.getElementById('mailAgain').href=lastMail;
+  document.getElementById('formInner').style.display='none';
+  const ok=document.getElementById('success'); ok.classList.add('on');
+  document.getElementById('successRing').innerHTML = document.getElementById('mainRing').innerHTML;
+  document.getElementById('successRing').setAttribute('viewBox',document.getElementById('mainRing').getAttribute('viewBox'));
+  window.location.href = lastMail;
+});
+document.getElementById('dlCard').addEventListener('click',()=>{
+  const W=1080,H=1350; const c=document.createElement('canvas'); c.width=W;c.height=H; const x=c.getContext('2d');
+  x.fillStyle='#f6f1e7';x.fillRect(0,0,W,H);
+  x.fillStyle='#0e0e0e';x.beginPath();x.arc(W/2,120,56,0,7);x.fill();x.fillStyle='#fff';x.font='300 24px Jost, sans-serif';x.textAlign='center';x.fillText('ring',W/2,114);x.fillText('ram',W/2,142);
+  x.fillStyle='#b8924a';x.font='400 22px Jost, sans-serif';x.fillText('MY RINGRAM DESIGN',W/2,230);
+  const svg=document.getElementById('mainRing').cloneNode(true); svg.setAttribute('xmlns','http://www.w3.org/2000/svg');
+  const vb=svg.getAttribute('viewBox').split(' ').map(Number); svg.setAttribute('width',vb[2]*2); svg.setAttribute('height',vb[3]*2);
+  const img=new Image(); img.onload=()=>{
+    const w=900,h=w*vb[3]/vb[2]; x.drawImage(img,(W-w)/2,260,w,h);
+    x.fillStyle='#0e0e0e';x.textAlign='left';x.font='300 26px Jost, sans-serif';
+    let y=260+h+40; designSummary().split('\n').forEach(l=>{ if(y<H-60){x.fillText(l.trim()?l:'',120,y); y+=l.startsWith('RING')?40:34;} });
+    x.fillStyle='#6f685c';x.font='300 20px Jost, sans-serif';x.textAlign='center';x.fillText('ringram · 223 Mott St, New York · @ringram_ny',W/2,H-36);
+    const a=document.createElement('a'); a.download='my-ringram-design.png'; a.href=c.toDataURL('image/png'); a.click();
+  };
+  img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(new XMLSerializer().serializeToString(svg));
+});
+
+/* ============ GUIDE ============ */
+const guide={karat:'k14',width:2.5,tone:2,metal:'yellow'};
+const SKIN=['#f3d7c2','#dcae8b','#a8724f','#6b4430'];
+function renderGuide(){
+  const opts=[['k10','10K'],['k14','14K'],['k18','18K'],['pt','Platinum'],['ag','Silver']];
+  document.getElementById('karatOpts').innerHTML = opts.map(([k,l])=>`<button type="button" class="opt ${guide.karat===k?'on':''}" data-gk="${k}">${l}</button>`).join('');
+  const m=METALS[guide.karat]; const parts = m.fam==='gold'?m.k : Math.round(m.pct/100*24*10)/10;
+  const cls = m.fam==='gold'?'g':m.fam;
+  document.getElementById('karatBar').innerHTML = Array.from({length:24},(_,i)=>`<i class="${i<Math.floor(parts)?cls:''}" style="transition-delay:${i*18}ms"></i>`).join('');
+  document.getElementById('karatPct').textContent = m.pct+'%';
+  document.getElementById('karatSub').textContent = m.fam==='gold'?`pure gold · ${m.k} of 24 parts`:m.fam==='pt'?'pure platinum (Pt950)':'pure silver (sterling .925)';
+  const an = {
+    k10:'<b>Think of a 24-slice pie:</b> 10 slices are gold, 14 are strong alloy metals. That makes 10K the <b>toughest</b> and most affordable gold. It handles daily knocks well, and it\'s the only gold we make in a 1.0mm width.',
+    k14:'<b>Like coffee with a splash of milk:</b> 14 of 24 parts are gold. Rich color, and still tough enough for every day. The sweet spot most couples choose.',
+    k18:'<b>Three quarters pure gold:</b> 18 of 24 parts. The deepest, warmest color and a heavier feel. A little softer, so it develops a lived-in glow over the years.',
+    pt:'<b>Almost all platinum:</b> 95% pure. Naturally white, so it will never fade or need re-plating. Dense and heavy, it\'s the heirloom metal.',
+    ag:'<b>92.5% pure silver:</b> bright, cool-toned and the most budget-friendly. Our sterling rings use pre-made cast rings from Japan for more design options, at a flat price per ring.'
+  };
+  document.getElementById('karatAnalogy').innerHTML = an[guide.karat];
+  document.getElementById('karatTable').innerHTML = `<tr><th>Metal</th><th>Purity</th><th>Ring price range</th></tr>
+   <tr><td>10K gold</td><td>41.7%</td><td>$220–$1,400+</td></tr><tr><td>14K gold</td><td>58.3%</td><td>$550–$2,200+</td></tr>
+   <tr><td>18K gold</td><td>75%</td><td>$730–$3,200+</td></tr><tr><td>Platinum Pt950</td><td>95%</td><td>$630–$2,600+</td></tr><tr><td>Sterling silver</td><td>92.5%</td><td>$90–$250 flat</td></tr>`;
+  // width compare
+  const ws=[1,1.5,2.5,3.5,5,7,10];
+  document.getElementById('cmpOpts').style.gridTemplateColumns='repeat(7,1fr)';
+  document.getElementById('cmpOpts').innerHTML = ws.map(w=>`<div class="cmp ${guide.width===w?'on':''}" data-gw="${w}"><b>${w}mm</b>${w>=7?'silver':''}</div>`).join('');
+  drawCompare(); drawHand();
+  document.getElementById('tones').innerHTML = SKIN.map((c,i)=>`<button type="button" class="${guide.tone===i?'on':''}" data-tone-i="${i}" style="background:${c}" aria-label="Skin tone ${i+1}"></button>`).join('');
+  document.getElementById('handMetal').innerHTML = [['yellow','Yellow'],['white','White'],['pink','Pink'],['pt','Platinum']].map(([k,l])=>`<button type="button" class="opt ${guide.metal===k?'on':''}" data-hm="${k}">${l}</button>`).join('');
+}
+function drawCompare(){
+  const w=guide.width, s=5*3.78; // 5x life size at 96dpi
+  const pal=PALETTES.yellow; const bw=w*s;
+  const objH = {1:0.76,1.5:1.35,2.5:2.4,3.5:3.5,5:5.25,7:7,10:10}[w]*s;
+  let obj='';
+  const oy=130-objH/2;
+  if(w===1) obj=`<rect x="300" y="${oy}" width="190" height="${objH}" rx="2" fill="#2e4c7a"/><text x="395" y="${oy-10}" text-anchor="middle" font-size="13" fill="#6f685c">credit card edge · 0.76mm</text>`;
+  else if(w===1.5) obj=`<rect x="330" y="${oy}" width="120" height="${objH}" rx="3" fill="#b9bcc2"/><g stroke="#8d9096">${Array.from({length:30},(_,i)=>`<line x1="${332+i*4}" x2="${332+i*4}" y1="${oy}" y2="${oy+objH}"/>`).join('')}</g><text x="390" y="${oy-10}" text-anchor="middle" font-size="13" fill="#6f685c">a dime, side view · 1.35mm</text>`;
+  else if(w===2.5) obj=`<rect x="330" y="${oy}" width="110" height="${objH}" rx="${objH/2}" fill="#c9ccd1" stroke="#8d9096"/><rect x="440" y="${oy-10}" width="60" height="${objH+20}" rx="8" fill="#2a2a2a"/><text x="410" y="${oy-20}" text-anchor="middle" font-size="13" fill="#6f685c">USB-C plug · 2.4mm tall</text>`;
+  else if(w===3.5) obj=`<rect x="320" y="${oy}" width="120" height="${objH}" rx="${objH/2}" fill="#d0d3d8" stroke="#8d9096"/><line x1="350" x2="350" y1="${oy}" y2="${oy+objH}" stroke="#333" stroke-width="3"/><line x1="370" x2="370" y1="${oy}" y2="${oy+objH}" stroke="#333" stroke-width="3"/><rect x="440" y="${oy-12}" width="60" height="${objH+24}" rx="8" fill="#2a2a2a"/><text x="410" y="${oy-22}" text-anchor="middle" font-size="13" fill="#6f685c">headphone plug · 3.5mm</text>`;
+  else if(w===5) obj=[0,1,2].map(i=>`<rect x="320" y="${oy+i*objH/3}" width="170" height="${objH/3-1}" rx="3" fill="${i%2?'#c2c5ca':'#b0b3b8'}"/>`).join('')+`<text x="405" y="${oy-10}" text-anchor="middle" font-size="13" fill="#6f685c">3 stacked quarters · 5.25mm</text>`;
+  else if(w===7) obj=`<polygon points="300,${oy} 470,${oy} 500,130 470,${oy+objH} 300,${oy+objH}" fill="#f2c230"/><polygon points="470,${oy} 500,130 470,${oy+objH}" fill="#e8c9a0"/><text x="400" y="${oy-10}" text-anchor="middle" font-size="13" fill="#6f685c">a pencil · ~7mm</text>`;
+  else obj=`<rect x="330" y="${oy}" width="140" height="${objH}" rx="${objH/2.2}" fill="#f1cfc0" stroke="#d2a996"/><text x="400" y="${oy-10}" text-anchor="middle" font-size="13" fill="#6f685c">a fingernail · ~10mm</text>`;
+  document.getElementById('cmpSvg').innerHTML = `
+   <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${pal[3]}"/><stop offset=".45" stop-color="${pal[2]}"/><stop offset="1" stop-color="${pal[0]}"/></linearGradient></defs>
+   <text x="130" y="${130-bw/2-12}" text-anchor="middle" font-size="13" fill="#6f685c">your band · ${w}mm</text>
+   <rect x="20" y="${130-bw/2}" width="220" height="${bw}" rx="${Math.min(4,bw/3)}" fill="url(#cg)"><animate attributeName="height" from="0" to="${bw}" dur=".5s"/></rect>
+   ${obj}
+   <text x="260" y="250" text-anchor="middle" font-size="11" fill="#9b9384" letter-spacing="2">SHOWN 5× LIFE SIZE</text>`;
+  document.getElementById('cmpAnalogy').innerHTML = `<b>${w}mm:</b> ${WIDTH_ANALOGY[w]}${w===1?' Available in 10K gold only.':w>=7?' Sterling silver only.':''}`;
+}
+function drawHand(){
+  const skin=SKIN[guide.tone], pal=guide.metal==='pt'?PALETTES.pt:PALETTES[guide.metal];
+  const ws=[1,1.5,2.5,3.5,5,7,10]; const s=9; let g=`<defs><linearGradient id="hb" x1="0" x2="1"><stop offset="0" stop-color="${pal[0]}"/><stop offset=".25" stop-color="${pal[2]}"/><stop offset=".45" stop-color="${pal[3]}"/><stop offset=".7" stop-color="${pal[4]}"/><stop offset="1" stop-color="${pal[5]}"/></linearGradient>
+   <linearGradient id="fs" x1="0" x2="1"><stop offset="0" stop-color="${shade(skin,-.18)}"/><stop offset=".35" stop-color="${skin}"/><stop offset=".7" stop-color="${shade(skin,.08)}"/><stop offset="1" stop-color="${shade(skin,-.2)}"/></linearGradient></defs>`;
+  ws.forEach((w,i)=>{
+    const x=50+i*135, fw=17*s/1.6; // finger ~17mm wide shown at ~5.6x
+    const fx=x+ (100-fw)/2;
+    g+=`<path d="M ${fx} 330 L ${fx} 70 Q ${fx} 10 ${fx+fw/2} 10 Q ${fx+fw} 10 ${fx+fw} 70 L ${fx+fw} 330 Z" fill="url(#fs)"/>
+        <path d="M ${fx+fw*0.2} 30 Q ${fx+fw/2} 18 ${fx+fw*0.8} 30 L ${fx+fw*0.78} 62 Q ${fx+fw/2} 70 ${fx+fw*0.22} 62 Z" fill="#fff" opacity=".35"/>
+        <path d="M ${fx+fw*0.3} 130 q ${fw*0.2} 6 ${fw*0.4} 0" stroke="${shade(skin,-.3)}" fill="none" opacity=".5"/>`;
+    const bh=w*s/1.6*1.0; const by=210-bh/2;
+    g+=`<rect x="${fx-3}" y="${by}" width="${fw+6}" height="${bh}" rx="${Math.min(6,bh/2)}" fill="url(#hb)"/><rect x="${fx-3}" y="${by}" width="${fw+6}" height="${Math.max(1,bh*0.18)}" fill="#fff" opacity=".45" rx="1"/>
+        <text x="${fx+fw/2}" y="358" text-anchor="middle" font-size="16" fill="#0e0e0e" font-family="Jost, sans-serif">${w}mm</text>`;
+  });
+  document.getElementById('handSvg').innerHTML=g;
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-gk],[data-gw],[data-tone-i],[data-hm]'); if(!t) return;
+  if(t.dataset.gk) guide.karat=t.dataset.gk;
+  if(t.dataset.gw) guide.width=+t.dataset.gw;
+  if(t.dataset.toneI!==undefined) guide.tone=+t.dataset.toneI;
+  if(t.dataset.hm) guide.metal=t.dataset.hm;
+  renderGuide();
+});
+
+/* ============ STORIES ============ */
+let storyFilter='All';
+function renderStories(){
+  const cats=['All',...new Set(STORIES.map(s=>s.cat))];
+  document.getElementById('storyFilters').innerHTML = cats.map(c=>`<button type="button" class="chip ${storyFilter===c?'on':''}" data-sf="${c}">${c}</button>`).join('');
+  document.getElementById('storyGrid').innerHTML = STORIES.filter(s=>storyFilter==='All'||s.cat===storyFilter).map(s=>`
+    <article class="story"><div class="txt"><div class="tag">${s.cat}</div><h3>${s.title}</h3><p>${s.text}</p>${s.quote?`<blockquote>"${s.quote}"</blockquote>`:''}<div class="who">Shared by <a href="https://www.instagram.com/${s.by}/" target="_blank" rel="noopener">@${s.by}</a></div></div>
+    ${LOCAL[s.code]!==undefined ? vidTile(LOCAL[s.code],'Tap to watch with sound') : `<button type="button" class="load" data-reel="${s.code}">▶ Watch the reel</button>`}</article>`).join('');
+}
+document.addEventListener('click',e=>{
+  const f=e.target.closest('[data-sf]'); if(f){storyFilter=f.dataset.sf;renderStories();return}
+  const l=e.target.closest('[data-reel]'); if(l){ l.outerHTML=`<iframe src="https://www.instagram.com/reel/${l.dataset.reel}/embed/" allowtransparency="true" allow="encrypted-media" title="Instagram reel"></iframe>`; }
+});
+
+/* ============ VIDEO LIGHTBOX ============ */
+(function(){
+  const lb=document.createElement('div'); lb.id='lb';
+  lb.innerHTML=`<video controls playsinline></video><div class="bar"><a target="_blank" rel="noopener">View on Instagram</a><button type="button">Close ✕</button></div>`;
+  document.body.appendChild(lb);
+  const v=lb.querySelector('video'), ig=lb.querySelector('a');
+  const close=()=>{v.pause();v.removeAttribute('src');v.load();lb.classList.remove('on')};
+  document.addEventListener('click',e=>{
+    const t=e.target.closest('[data-play]');
+    if(t){const n=+t.dataset.play; const r=REELS.find(x=>x.n===n); v.src=`media/full-${n}.mp4`; v.poster=`media/story-${n}.jpg`; ig.href=`https://www.instagram.com/reel/${r.code}/`; lb.classList.add('on'); v.play().catch(()=>{}); return}
+    if(lb.classList.contains('on') && (e.target===lb || e.target.closest('#lb button'))) close();
+  });
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('on'))close()});
+})();
+// pause offscreen preview loops to save battery
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target; if(e.isIntersecting){v.play().catch(()=>{})} else v.pause()}),{threshold:.1});
+const watchVids=()=>document.querySelectorAll('.vid video').forEach(v=>vio.observe(v));
+new MutationObserver(watchVids).observe(document.body,{childList:true,subtree:true}); watchVids();
+
+/* ============ CURSOR + SCROLL RING ============ */
+const curRing = {...baseRing(),metal:'k18',tone:'yellow',width:3.5,size:3,stone:'apr'};
+document.getElementById('cursorSvg').setAttribute('viewBox','95 95 210 180');
+document.getElementById('cursorSvg').innerHTML = ringSVG(curRing,{tilt:.5,noShadow:true,scale:9});
+(function(){
+  if(!matchMedia('(pointer:fine)').matches){document.body.classList.remove('has-cursor');return}
+  const c=document.getElementById('cursor'), d=document.getElementById('dot');
+  let mx=-100,my=-100,x=-100,y=-100;
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;d.style.transform=`translate(${mx}px,${my}px)`;
+    c.classList.toggle('hover',!!e.target.closest('a,button,input,select,textarea,label,.stonebtn,iframe,svg.main'))});
+  addEventListener('mousedown',()=>c.classList.add('down')); addEventListener('mouseup',()=>c.classList.remove('down'));
+  document.addEventListener('mouseleave',()=>{c.style.opacity=0;d.style.opacity=0}); document.addEventListener('mouseenter',()=>{c.style.opacity=1;d.style.opacity=1});
+  (function loop(){x+=(mx-x)*.2;y+=(my-y)*.2;c.style.transform=`translate(${x}px,${y}px)`;requestAnimationFrame(loop)})();
+})();
+// scroll ring: a best-seller band that spins as you scroll, with a progress arc
+(function(){
+  const svg=document.getElementById('srSvg');
+  const ring={...baseRing(),metal:'k18',tone:'yellow',width:2.5,size:3};
+  function draw(){
+    const p = scrollY/Math.max(1,(document.documentElement.scrollHeight-innerHeight));
+    const tilt = .2 + .55*Math.abs(Math.sin(p*Math.PI*3));
+    svg.innerHTML = `<circle cx="50" cy="50" r="46" fill="none" stroke="rgba(14,14,14,.1)" stroke-width="2"/>
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#b8924a" stroke-width="2.5" stroke-dasharray="${2*Math.PI*46}" stroke-dashoffset="${2*Math.PI*46*(1-p)}" transform="rotate(-90 50 50)" stroke-linecap="round"/>
+      <g transform="translate(50 52) rotate(${p*720}) scale(.27) translate(-200 -185)">${ringSVG(ring,{tilt,noShadow:true})}</g>`;
+  }
+  addEventListener('scroll',()=>requestAnimationFrame(draw),{passive:true}); draw();
+  document.getElementById('scrollRing').addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+})();
+
+/* ============ REVEALS ============ */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+function observeReveals(){document.querySelectorAll('.page.on .reveal:not(.in)').forEach(el=>io.observe(el))}
+
+initHome(); route();
+</script>
+</body>
+</html>
