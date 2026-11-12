@@ -19,8 +19,11 @@ a{color:inherit;text-decoration:none}
 .pill{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:5;background:rgba(14,14,14,.72);backdrop-filter:blur(10px);color:var(--gold2);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;padding:7px 14px;border-radius:999px;white-space:nowrap;font-weight:400}
 
 /* video collage */
-.collage{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:var(--ink)}
-.tile{position:relative;aspect-ratio:9/16;overflow:hidden;background:#1b1a18;display:block}
+.collage{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:3px;background:var(--ink)}
+.tile{position:relative;aspect-ratio:3/4;overflow:hidden;background:#1b1a18;display:block}
+.tile video,.tile .cover{position:absolute;inset:0}
+.tile .cover{transition:opacity .9s ease,transform 1.2s ease}
+.tile.live .cover{opacity:0;transform:scale(1.04)}
 .tile video,.tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
 .tile:hover video{transform:scale(1.06)}
 .tile .play{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:6px;background:rgba(255,255,255,.88);display:grid;place-items:center;opacity:.9}
@@ -28,7 +31,7 @@ a{color:inherit;text-decoration:none}
 .tile.all{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:radial-gradient(circle at 50% 35%,#2a2620,#0e0e0e);color:#fff;text-align:center;padding:10px}
 .tile.all b{font-family:var(--serif);font-style:italic;font-weight:500;font-size:22px;line-height:1.05;color:var(--gold2)}
 .tile.all span{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#cfc6b6}
-.collage:after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(180deg,rgba(246,241,231,0) 0%,rgba(246,241,231,.75) 55%,var(--ivory) 100%);pointer-events:none}
+.collage:after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(180deg,rgba(246,241,231,0) 0%,rgba(246,241,231,.8) 60%,var(--ivory) 100%);pointer-events:none}
 .collage .caption{position:absolute;left:0;right:0;bottom:84px;z-index:2;text-align:center;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);pointer-events:none}
 
 /* identity */
@@ -217,8 +220,6 @@ body.intro-on .page{opacity:0;transform:translateY(24px)}
 
   <div class="id">
     <div class="logo">ring<br>ram</div>
-    <h1>ringram <em>New York</em></h1>
-    <div class="tag">Craft your own ring from scratch</div>
     <p class="bio">Hammer it, shape it, engrave it and polish it, side by side with our artisans, in an afternoon in SoHo. You leave wearing it.</p>
     <div class="chips">
       <span class="chip">💍 Personalized</span><span class="chip">🥂 Anniversary</span><span class="chip">🤍 Wedding bands</span><span class="chip">✎ Ring tattoo</span>
@@ -333,19 +334,22 @@ const IG='https://www.instagram.com/reel/';
 const BOOK='https://booking.ringram1929.com/reservation/course';
 const IMG=h=>`https://items-images-production.s3.us-west-2.amazonaws.com/files/${h}/original.png`;
 const STORIES=[
-  {n:1,code:'DfYNzrth8Gj',t:'Anniversary',h:'18 years together, 6 married',p:'A new pair for the other hand, so they carry each other every day.'},
+  {n:5,code:'DfGFbWph7Dj',t:'Milestones',h:'A birthday & an anniversary',p:'They came to celebrate both, and they are already planning the next ring.'},
+  {n:3,code:'DduRL8Zh3TM',t:'Family',h:'A father & son afternoon',p:'Time to slow down, make something together and share a few laughs.'},
   {n:2,code:'Dd9-jEqB1MK',t:'Wedding',h:'Wedding rings, made together',p:'Making the bands became part of the wedding story too.'},
-  {n:3,code:'DduRL8Zh3TM',t:'Family',h:'A father & son afternoon',p:'Time to slow down, make something together and laugh.'},
-  {n:4,code:'DeiCRlShAIU',t:'Friends',h:'A bond worth wearing',p:'Matching rings made by hand, side by side.'},
-  {n:5,code:'DfGFbWph7Dj',t:'Milestones',h:'A birthday & an anniversary',p:'Already planning the next ring for the next chapter.'},
-  {n:6,code:'DeQEIFJBLBH',t:'Couples',h:'Made for each other',p:'Two rings, two makers, one story.'},
-  {n:7,code:'De0D2Cch0aG',t:'Tribute',h:'Some bonds stay forever',p:'A ring to honor someone you love.'}
+  {n:6,code:'DeQEIFJBLBH',t:'Couples',h:'Made for each other',p:'Two rings, two makers, one afternoon on Mott Street.'}
 ];
+// collage: original Instagram covers, with each reel taking a turn to play
 document.getElementById('collage').innerHTML = STORIES.map(s=>`<a class="tile" href="${IG}${s.code}/" target="_blank" rel="noopener" aria-label="Watch: ${s.h}">
-  <video src="../media/story-${s.n}.mp4" poster="../media/story-${s.n}.jpg" muted loop playsinline autoplay preload="metadata"></video><span class="play"></span></a>`).join('')
-  + `<a class="tile all" href="https://www.instagram.com/ringram_ny/reels/" target="_blank" rel="noopener"><b>A ring &amp;<br>the story</b><span>See all →</span></a>`;
-// stagger playback so tiles don't loop in sync
-document.querySelectorAll('.collage video').forEach((v,i)=>{v.addEventListener('loadedmetadata',()=>{try{v.currentTime=(i*0.8)%Math.max(1,v.duration-0.5)}catch(e){}});});
+  <video src="../media/story-${s.n}.mp4" muted loop playsinline preload="auto"></video><img class="cover" src="../media/cover-${s.n}.jpg" alt="A ring & the story: ${s.h}"><span class="play"></span></a>`).join('');
+(function(){
+  const tiles=[...document.querySelectorAll('.collage .tile')]; let cur=-1, hovering=null;
+  const play=t=>{const v=t.querySelector('video'); v.currentTime=0; v.play().then(()=>t.classList.add('live')).catch(()=>{})};
+  const stop=t=>{t.classList.remove('live'); setTimeout(()=>{if(!t.classList.contains('live')) t.querySelector('video').pause()},900)};
+  const next=()=>{ if(hovering) return; if(cur>=0) stop(tiles[cur]); cur=(cur+1)%tiles.length; play(tiles[cur]); };
+  setTimeout(()=>{next(); setInterval(next,5200)},1200);
+  tiles.forEach(t=>{t.addEventListener('mouseenter',()=>{hovering=t; tiles.forEach(x=>x!==t&&stop(x)); play(t)}); t.addEventListener('mouseleave',()=>{hovering=null; stop(t)})});
+})();
 
 const COURSES=[
   {f:true,b:'Most popular',img:'016bb15df2dc5d56352b4af74e397702066e469d',m:'2 hrs · 1–2 people',h:'Personalized Ring · Gold / Platinum',p:'10K, 14K, 18K gold or Pt950, 1.0–5mm.',pr:'$220+'},
@@ -360,7 +364,7 @@ document.getElementById('cards').innerHTML = COURSES.map((c,i)=>`<a id="c-${i}" 
   <div class="img" style="background-image:url('${IMG(c.img)}')"></div>
   <div class="txt"><div class="meta">${c.m}</div><h3>${c.h}</h3><p>${c.p}</p><div class="row"><span class="price">${c.pr}</span><span class="btn">Book</span></div></div></a>`).join('');
 
-document.getElementById('strip').innerHTML = STORIES.map(s=>`<a class="story" href="${IG}${s.code}/" target="_blank" rel="noopener"><img src="../media/story-${s.n}.jpg" alt="" loading="lazy"><div><div class="t">${s.t}</div><h4>${s.h}</h4><p>${s.p}</p><span class="w">Watch ▶</span></div></a>`).join('');
+document.getElementById('strip').innerHTML = STORIES.map(s=>`<a class="story" href="${IG}${s.code}/" target="_blank" rel="noopener"><img src="../media/cover-${s.n}.jpg" alt="" loading="lazy"><div><div class="t">${s.t}</div><h4>${s.h}</h4><p>${s.p}</p><span class="w">Watch ▶</span></div></a>`).join('');
 
 /* ===== "What are you celebrating?" helper ===== */
 const PICKS={
