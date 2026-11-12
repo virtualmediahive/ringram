@@ -49,7 +49,7 @@ h1 em{font-family:var(--serif);font-style:italic;color:var(--gold);font-weight:5
 .socials a{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--gold2);display:grid;place-items:center;transition:transform .25s,background .25s}
 .socials a:hover{transform:translateY(-3px);background:var(--gold);color:#fff}
 .socials svg{width:19px;height:19px}
-.addr{margin-top:14px;font-size:13px;color:var(--muted)}
+.addr{display:inline-block;margin-top:14px;font-size:13.5px;color:var(--ink);border-bottom:1px solid var(--gold2);padding-bottom:2px}
 
 /* sections */
 .sec{padding:0 18px;margin-top:34px}
@@ -221,16 +221,7 @@ body.intro-on .page{opacity:0;transform:translateY(24px)}
   <div class="id">
     <div class="logo">ring<br>ram</div>
     <p class="bio">Hammer it, shape it, engrave it and polish it, side by side with our artisans, in an afternoon in SoHo. You leave wearing it.</p>
-    <div class="chips">
-      <span class="chip">💍 Personalized</span><span class="chip">🥂 Anniversary</span><span class="chip">🤍 Wedding bands</span><span class="chip">✎ Ring tattoo</span>
-    </div>
-    <div class="socials">
-      <a href="https://www.instagram.com/ringram_ny/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-      <a href="sms:+16469570489" aria-label="Text us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/></svg></a>
-      <a href="mailto:ringram.ny@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
-      <a href="https://maps.google.com/?q=223+Mott+St+New+York+NY+10012" target="_blank" rel="noopener" aria-label="Directions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></a>
-    </div>
-    <div class="addr">223 Mott St, SoHo, New York · (646) 957-0489 · LA coming spring 2027</div>
+    <a class="addr" href="https://maps.google.com/?q=223+Mott+St+New+York+NY+10012" target="_blank" rel="noopener">📍 223 Mott St, SoHo, New York · Get directions</a>
     <div class="quick">
       <a class="main" href="#book"><b>💍</b>Book a session</a>
       <a href="#prices"><b>$</b>See prices</a>
@@ -323,6 +314,12 @@ body.intro-on .page{opacity:0;transform:translateY(24px)}
   </div>
 
   <footer>
+    <div class="socials" style="margin:0 0 22px">
+      <a href="https://www.instagram.com/ringram_ny/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a href="sms:+16469570489" aria-label="Text us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/></svg></a>
+      <a href="mailto:ringram.ny@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      <a href="https://maps.google.com/?q=223+Mott+St+New+York+NY+10012" target="_blank" rel="noopener" aria-label="Directions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></a>
+    </div>
     <div class="sig">Every ring tells a story. What's yours?</div>
     <div>© 2026 ringram · 223 Mott St, New York, NY 10012</div>
     <div class="concept">Concept page by <b>Virtual Media Hive</b></div>
