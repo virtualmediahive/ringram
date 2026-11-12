@@ -287,11 +287,6 @@ body.intro-on .page{opacity:0;transform:translateY(24px)}
     <a class="big-btn" href="https://booking.ringram1929.com/reservation/course" target="_blank" rel="noopener">See all times &amp; book →</a>
   </div>
 
-  <!-- stories -->
-  <div class="sec rv">
-    <div class="label">A ring &amp; the story</div>
-    <div class="strip" id="strip"></div>
-  </div>
 
   <!-- how it works -->
   <div class="sec rv">
@@ -361,7 +356,6 @@ document.getElementById('cards').innerHTML = COURSES.map((c,i)=>`<a id="c-${i}" 
   <div class="img" style="background-image:url('${IMG(c.img)}')"></div>
   <div class="txt"><div class="meta">${c.m}</div><h3>${c.h}</h3><p>${c.p}</p><div class="row"><span class="price">${c.pr}</span><span class="btn">Book</span></div></div></a>`).join('');
 
-document.getElementById('strip').innerHTML = STORIES.map(s=>`<a class="story" href="${IG}${s.code}/" target="_blank" rel="noopener"><img src="../media/cover-${s.n}.jpg" alt="" loading="lazy"><div><div class="t">${s.t}</div><h4>${s.h}</h4><p>${s.p}</p><span class="w">Watch ▶</span></div></a>`).join('');
 
 /* ===== "What are you celebrating?" helper ===== */
 const PICKS={
